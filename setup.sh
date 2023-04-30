@@ -9,7 +9,7 @@ else
 echo -e "\e[31mPermission Denied!\e[0m";
 echo -e "\e[31mIJIN DULU NGENTOT! \e[0m"
 exit 0
-
+fi
 clear
 red='\e[1;31m'
 green='\e[0;32m'
