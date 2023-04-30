@@ -1,16 +1,6 @@
 #!/bin/bash
 
-MYIP=$(wget -qO- ifconfig.me/ip);
-#########################
-IZIN=$(curl -sS https://raw.githubusercontent.com/halluboys/vmess/main/permission/ip  | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mIJIN DULU NGENTOT! \e[0m"
-exit 0
-fi
-clear
+
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
