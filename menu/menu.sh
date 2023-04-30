@@ -108,7 +108,7 @@ echo -e "  $Lred      )           (         )   .   ,    ( /(     "
 echo -e "  $Lred     /( (     (   )\ )   ( /(    ) (    )\())     "
 echo -e "  $Lred    (_)))\  _ )\ (()/(   )\())  /( )\  ((_)\      "
 echo -e "  $CYAN ━━━$red(\e[93m_$red)\e[93m_$red(\e[93m_$red)(\e[93m_$red((\e[93m_$red)$CYAN━$red)(\e[93m_$red))$CYAN━$red((\e[93m_$red)\\e[93m__$red)(\e[93m_$red)((\e[93m_$red)(\e[93m__$red((\e[93m_$red)$CYAN━━━━━ "
-echo -e "  \E[44;1;39m                      ⇱ FAKINGSILET⇲                      \E[0m"
+echo -e "  \E[44;1;39m                    ⇱ FAKINGSILET⇲                    \E[0m"
 echo -e "  $CYAN ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
 #echo -e "\e[33m OS            \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
 echo -e "\e[33m IP            \e[0m:  $IPVPS"	
