@@ -1,15 +1,7 @@
 #!/bin/bash
 MYIP=$(wget -qO- ifconfig.me/ip);
 #########################
-IZIN=$(curl -sS https://raw.githubusercontent.com/halluboys/vmess/permission/ip | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo -e "\e[32mPermission Accepted...\e[0m"
-else
-echo -e "\e[31mPermission Denied!\e[0m";
-echo -e "\e[31mDaftar IP dalam github lok sayang okay? mun dah daftar tapi masih juak permission denied refresh dolok website ya hehe. Love you #\e[0m"
-exit 0
 
-clear
 source /var/lib/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/xray/domain)
