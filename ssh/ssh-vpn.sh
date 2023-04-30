@@ -277,11 +277,11 @@ cd /usr/bin
 # menu
 wget -O menu "https://raw.githubusercontent.com/halluboys/vmess/main/menu/menu.sh"
 wget -O m-vmess "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-vmess.sh"
-wget -O m-vless "https://raw.githubusercontent.com/halluboys/Vmess/menu/m-vless.sh"
-wget -O running "https://raw.githubusercontent.com/halluboys/vmess/menu/running.sh"
+wget -O m-vless "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-vless.sh"
+wget -O running "https://raw.githubusercontent.com/halluboys/vmess/main/menu/running.sh"
 wget -O clearcache "https://raw.githubusercontent.com/halluboys/vmess/main/menu/clearcache.sh"
-wget -O m-ssws "https://raw.githubusercontent.com/halluboys/Vmess/menu/m-ssws.sh"
-wget -O m-trojan "https://raw.githubusercontent.com/halluboys/Vmess/menu/m-trojan.sh"
+wget -O m-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-ssws.sh"
+wget -O m-trojan "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-trojan.sh"
 
 # menu ssh ovpn
 wget -O m-sshovpn "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-sshovpn.sh"
