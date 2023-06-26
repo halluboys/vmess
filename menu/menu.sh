@@ -17,7 +17,7 @@ Lgreen='\e[92m'
 Lyellow='\e[93m'
 white='\e[1;37m'
 NC='\e[0m'
-MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(wget -qO- ipinfo.io/ip);
 #########################
 IZIN=$(curl -sS https://raw.githubusercontent.com/halluboys/perizinan/main/main/allow | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
