@@ -496,7 +496,7 @@ cd /usr/bin/
 # vmess
 wget -O add-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-ws.sh" && chmod +x add-ws
 wget -O trialvmess "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialvmess.sh" && chmod +x trialvmess
-wget -O renew-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xrayrenew-ws.sh" && chmod +x renew-ws
+wget -O renew-ws "https://raw.githubusercontent.com/halluboys/vmess/main/renew-ws.sh" && chmod +x renew-ws
 wget -O del-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ws.sh" && chmod +x del-ws
 wget -O cek-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-ws.sh" && chmod +x cek-ws
 
