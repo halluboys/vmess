@@ -129,6 +129,7 @@ echo "   - Vmess gRPC               : 443" | tee -a log-install.txt
 echo "   - Vless gRPC               : 443" | tee -a log-install.txt
 echo "   - Trojan gRPC              : 443" | tee -a log-install.txt
 echo "   - Shadowsocks gRPC         : 443" | tee -a log-install.txt
+echo "   - TrojanGo                 : 2087" | tee -a log-install.txt
 echo ""
 echo ""
 echo "------------------------------------------------------------"
