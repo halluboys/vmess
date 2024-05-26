@@ -1,12 +1,6 @@
 #!/bin/bash
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # System Request : Debian 9+/Ubuntu 18.04+/20+
-# Develovers » AnggaBadol-Store
-# Email      » AnggaBadol-Store@gmail.com
-# telegram   » https://t.me/AnggaBadol-Store
-# whatsapp   » wa.me/+6285664271447
-# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# AnggaBadol-Store
 
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
