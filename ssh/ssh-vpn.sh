@@ -56,6 +56,8 @@ cat > /etc/rc.local <<-END
 exit 0
 END
 
+apt install dos2unix
+
 # Ubah izin akses
 chmod +x /etc/rc.local
 
@@ -310,6 +312,7 @@ wget -O auto-reboot "https://raw.githubusercontent.com/halluboys/vmess/menu/auto
 wget -O restart "https://raw.githubusercontent.com/halluboys/vmess/main/menu/restart.sh"
 wget -O bw "https://raw.githubusercontent.com/halluboys/vmess/main/menu/bw.sh"
 wget -O m-tcp "https://raw.githubusercontent.com/halluboys/vmess/main/menu/tcp.sh"
+wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/backup/m-backup.sh"
 
 # change port
 #wget -O port-ssl "https://raw.githubusercontent.com/halluboys/Vmess/port/port-ssl.sh"
@@ -361,6 +364,9 @@ chmod +x m-tcp
 chmod +x xp
 #chmod +x asu
 chmod +x sshws
+chmod +x m-backup
+dos2unix menu
+dos2unix m-backup
 cd
 
 
