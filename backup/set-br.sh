@@ -1,5 +1,5 @@
 #!/bin/bash
-# My Telegram : https://t.me/Akbar218
+# My Telegram : https://t.me/haluboy
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -48,7 +48,7 @@ chown -R www-data:www-data /etc/msmtprc
 
 cd /usr/bin
 
-wget -O autobackup "https://${akbarvpn}/autobackup.sh"
+#wget -O autobackup "https://${akbarvpn}/autobackup.sh"
 wget -O addemail "https://${akbarvpn}/addemail.sh"
 wget -O changesend "https://${akbarvpn}/changesend.sh"
 wget -O startbackup "https://${akbarvpn}/startbackup.sh"
@@ -63,7 +63,7 @@ chmod +x changesend
 chmod +x startbackup
 chmod +x stopbackup
 chmod +x testsend
-chmod +x autobackup
+#chmod +x autobackup
 chmod +x backup
 chmod +x restore
 #chmod +x strt
