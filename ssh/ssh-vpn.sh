@@ -312,7 +312,7 @@ wget -O auto-reboot "https://raw.githubusercontent.com/halluboys/vmess/menu/auto
 wget -O restart "https://raw.githubusercontent.com/halluboys/vmess/main/menu/restart.sh"
 wget -O bw "https://raw.githubusercontent.com/halluboys/vmess/main/menu/bw.sh"
 wget -O m-tcp "https://raw.githubusercontent.com/halluboys/vmess/main/menu/tcp.sh"
-wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/backup/m-backup.sh"
+wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-backup.sh"
 
 # change port
 #wget -O port-ssl "https://raw.githubusercontent.com/halluboys/Vmess/port/port-ssl.sh"
