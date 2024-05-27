@@ -14,13 +14,16 @@ export NC='\033[0m'
 PATH="/usr/bin:$PATH"
 x=`basename $0`
 if test $# = 0; then
-  echo  "          ${PURPLE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-  echo  "          ${RED}#----------------------${NC}${GREEN}[MENU  ENCRYPTER]${NC}${RED}--------------------#${NC}"
-  echo  "          ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-  echo  "          ${RED}#${NC}            ${GREEN} USAGE : ketik enc spasi namafile${NC}             ${RED} #${NC}"
-  echo  "          ${YELLOW}-------------------------------------------------------------${NC}"
-  echo  "          ${BLUE}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-  exit 1
+  echo -e ""
+echo -e ""
+echo -e "  $Lred                                            )     "
+echo -e "  $Lred      )           (         )   .   ,    ( /(     "
+echo -e "  $Lred     /( (     (   )\ )   ( /(    ) (    )\())     "
+echo -e "  $Lred    (_)))\  _ )\ (()/(   )\())  /( )\  ((_)\      "
+echo -e "  $CYAN ━━━$red(\e[93m_$red)\e[93m_$red(\e[93m_$red)(\e[93m_$red((\e[93m_$red)$CYAN━$red)(\e[93m_$red))$CYAN━$red((\e[93m_$red)\\e[93m__$red)(\e[93m_$red)((\e[93m_$red)(\e[93m__$red((\e[93m_$red)$CYAN━━━━━ "
+echo -e "  \E[44;1;39m                  ⇱ KETIK ENC SPASI NAMA FILE⇲                  \E[0m"
+echo -e "  $CYAN ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ "
+exit 1
 fi
 
 set -C
