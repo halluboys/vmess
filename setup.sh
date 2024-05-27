@@ -66,6 +66,8 @@ sleep 0.5
 clear
 wget https://raw.githubusercontent.com/halluboys/vmess/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 wget https://raw.githubusercontent.com/halluboys/vmess/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/halluboys/vmess/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
