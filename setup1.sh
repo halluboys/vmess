@@ -160,8 +160,7 @@ apt -y install jq
 apt-get install figlet -y
 apt-get install ruby -y
 gem install lolcat
-# install wget and curl
-apt -y install wget curl
+
 # install webserver
 apt -y install nginx
 cd
