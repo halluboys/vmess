@@ -2,7 +2,7 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 sh_ver="1.3.2"
-github="https://github.com/Chikage0o0/Linux-NetSpeed"
+github="raw.githubusercontent.com/Chikage0o0/Linux-NetSpeed"
 
 Green_font_prefix="\033[32m"
 Red_font_prefix="\033[31m"
