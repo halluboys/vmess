@@ -313,7 +313,7 @@ wget -O restart "https://raw.githubusercontent.com/halluboys/vmess/main/menu/res
 wget -O bw "https://raw.githubusercontent.com/halluboys/vmess/main/menu/bw.sh"
 wget -O m-tcp "https://raw.githubusercontent.com/halluboys/vmess/main/menu/tcp.sh"
 wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-backup.sh"
-
+wget https://raw.githubusercontent.com/halluboys/vmess/main/encrypt/epro && chmod +x epro
 # change port
 #wget -O port-ssl "https://raw.githubusercontent.com/halluboys/Vmess/port/port-ssl.sh"
 #wget -O port-ovpn "https://raw.githubusercontent.com/halluboys/Vmess/port/port-ovpn.sh"
