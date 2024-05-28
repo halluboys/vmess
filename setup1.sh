@@ -1,5 +1,4 @@
 #!/bin/bash
-
 color1='\e[031;1m'
 color2='\e[34;1m'
 color3='\e[0m'
@@ -17,9 +16,7 @@ Lgreen='\e[92m'
 Lyellow='\e[93m'
 white='\e[1;37m'
 NC='\e[0m'
-tyblue='\e[1;36m'
-
-MYIP=$(wget -qO- ifconfig.me/ip);
+MYIP=$(wget -qO- ipinfo.io/ip);
 #########################
 IZIN=$(curl -sS https://raw.githubusercontent.com/halluboys/perizinan/main/main/allow | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
@@ -57,26 +54,6 @@ else
     typevps="KVM"
 fi
 clear
-
-purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
-tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-
-#System version number
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-clear
-
-MYIP=$(wget -qO- ifconfig.me/ip);
-#########################
 
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
@@ -128,17 +105,47 @@ NET=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 source /etc/os-release
 ver=$VERSION_ID
 
-#figlet
-apt-get install figlet -y
-apt-get install ruby -y
-gem install lolcat
-
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 #goto root
 cd
+
+# Edit file /etc/systemd/system/rc-local.service
+cat > /etc/systemd/system/rc-local.service <<-END
+[Unit]
+Description=/etc/rc.local
+ConditionPathExists=/etc/rc.local
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+StandardOutput=tty
+RemainAfterExit=yes
+SysVStartPriority=99
+[Install]
+WantedBy=multi-user.target
+END
+
+# nano /etc/rc.local
+cat > /etc/rc.local <<-END
+#!/bin/sh -e
+# rc.local
+# By default this script does nothing.
+exit 0
+END
+
 apt install dos2unix
+
+# Ubah izin akses
+chmod +x /etc/rc.local
+# enable rc local
+systemctl enable rc-local
+systemctl start rc-local.service
+
+# disable ipv6
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
 apt update -y
@@ -149,7 +156,12 @@ apt-get remove --purge exim4 -y
 
 #install jq
 apt -y install jq
-
+#figlet
+apt-get install figlet -y
+apt-get install ruby -y
+gem install lolcat
+# install wget and curl
+apt -y install wget curl
 # install webserver
 apt -y install nginx
 cd
@@ -159,6 +171,8 @@ wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/halluboys/vmess
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
+# install fail2ban
+apt -y install fail2ban
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
 	echo; echo; echo "Please un-install the previous version first"
@@ -786,26 +800,6 @@ wget -O trialvmess "https://raw.githubusercontent.com/halluboys/vmess/main/xray/
 wget -O renew-ws "https://raw.githubusercontent.com/halluboys/vmess/main/renew-ws.sh" && chmod +x renew-ws
 wget -O del-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ws.sh" && chmod +x del-ws
 wget -O cek-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-ws.sh" && chmod +x cek-ws
-
-# vless
-wget -O add-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-vless.sh" && chmod +x add-vless
-wget -O trialvless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialvless.sh" && chmod +x trialvless
-wget -O renew-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-vless.sh" && chmod +x renew-vless
-wget -O del-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-vless.sh" && chmod +x del-vless
-wget -O cek-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-vless.sh" && chmod +x cek-vless
-
-# trojan
-wget -O add-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-tr.sh" && chmod +x add-tr
-wget -O trialtrojan "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialtrojan.sh" && chmod +x trialtrojan
-wget -O del-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-tr.sh" && chmod +x renew-tr
-wget -O cek-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-tr.sh" && chmod +x cek-tr
-
-# shadowsocks
-wget -O add-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-ssws.sh" && chmod +x add-ssws
-wget -O trialssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialssws.sh" && chmod +x trialssws
-wget -O del-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ssws.sh" && chmod +x del-ssws
-wget -O renew-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
 # trojango
 #wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
