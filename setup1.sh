@@ -24,10 +24,8 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
-
-echo ""
-
 clear
+echo ""
 red "Tambah Domain Untuk XRAY"
 echo " "
 read -rp "Input domain kamu : " -e dns
