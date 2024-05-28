@@ -27,7 +27,7 @@ touch /etc/v2ray/scdomain
 clear
 echo ""
 red "Tambah Domain Untuk XRAY"
-echo " "
+echo ""
 read -rp "Input domain kamu : " -e dns
     if [ -z $dns ]; then
         echo -e "
