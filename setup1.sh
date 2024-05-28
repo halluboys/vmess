@@ -18,6 +18,17 @@ white='\e[1;37m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 #########################
+#System version number
+if [ "${EUID}" -ne 0 ]; then
+		echo "You need to run this script as root"
+		exit 1
+fi
+if [ "$(systemd-detect-virt)" == "openvz" ]; then
+		echo "OpenVZ is not supported"
+		exit 1
+fi
+clear
+
 mkdir -p /etc/xray
 mkdir -p /etc/v2ray
 touch /etc/xray/domain
