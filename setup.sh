@@ -1,6 +1,26 @@
 #!/bin/bash
 
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
+DF='\e[39m'
+Bold='\e[1m'
+Blink='\e[5m'
+yell='\e[33m'
+red='\e[1;31m'
+green='\e[1;32m'
+blue='\e[1;34m'
+PURPLE='\e[1;95m'
+CYAN='\e[1;36m'
+Lred='\e[1;91m'
+Lgreen='\e[92m'
+Lyellow='\e[93m'
+white='\e[1;37m'
+NC='\e[0m'
+tyblue='\e[1;36m'
+
 MYIP=$(wget -qO- ifconfig.me/ip);
+#########################
 IZIN=$(curl -sS https://raw.githubusercontent.com/halluboys/perizinan/main/main/allow | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo -e "\e[32mPermission Accepted...\e[0m"
@@ -38,11 +58,6 @@ else
 fi
 clear
 
-red='\e[1;31m'
-green='\e[0;32m'
-yell='\e[1;33m'
-tyblue='\e[1;36m'
-NC='\e[0m'
 purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
 tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
