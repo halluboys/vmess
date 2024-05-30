@@ -31,7 +31,7 @@ echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
 cd /root
 rm -rf /root/backup
 mkdir /root/backup
-cp -r /etc/xray/config.json backup/xray/config.json
+cp -r /etc/xray/config.json backup/xray/
 cd /root
 zip -r $IP-$date.zip backup > /dev/null 2>&1
 rclone copy /root/$IP-$date.zip dr:backup/
