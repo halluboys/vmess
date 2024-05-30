@@ -35,7 +35,7 @@ cp gshadow /etc/
 # cp ss.conf /etc/shadowsocks-libev/ss.conf
 # cp -r akbarstorevpn /var/lib/
 # cp -r sstp /home/
-cp -r xray /etc/
+cp -r config.json /etc/xray
 # cp -r trojan-go /etc/
 # cp -r shadowsocksr /usr/local/
 cp -r public_html /home/vps/
