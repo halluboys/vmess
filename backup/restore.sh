@@ -26,7 +26,6 @@ sleep 1
 echo Start Restore
 cd /root/backup
 cp -r config.json /etc/xray
-strt
 rm -rf /root/backup
 rm -f backup.zip
 echo Done
