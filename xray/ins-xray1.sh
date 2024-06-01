@@ -633,7 +633,7 @@ wget -O del-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-
 wget -O cek-ws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-ws.sh" && chmod +x cek-ws
 
 # menu system
-wget -O menu "https://raw.githubusercontent.com/halluboys/vmess/main/menu/menu.sh" && chmod +x menu
+wget -O menu "https://raw.githubusercontent.com/halluboys/vmess/main/menu/menu1.sh" && chmod +x menu
 wget -O m-vmess "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-vmess.sh" && chmod +x m-vmess
 wget -O m-vless "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-vless.sh" && chmod +x m-vless
 wget -O running "https://raw.githubusercontent.com/halluboys/vmess/main/menu/running.sh" && chmod +x running
