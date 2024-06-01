@@ -107,7 +107,7 @@ echo -e "$green          Install XRAY              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 0.5
 clear
-wget https://raw.githubusercontent.com/halluboys/vmess/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/halluboys/vmess/main/xray/ins-xray1.sh && chmod +x ins-xray1.sh && ./ins-xray1.sh
 #wget https://raw.githubusercontent.com/halluboys/vmess/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 wget https://raw.githubusercontent.com/halluboys/vmess/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
