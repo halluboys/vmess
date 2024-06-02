@@ -561,17 +561,17 @@ wget -O del-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/d
 wget -O cek-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-vless.sh" && chmod +x cek-vless
 
 # trojan
-wget -O add-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-tr.sh" && chmod +x add-tr
-wget -O trialtrojan "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialtrojan.sh" && chmod +x trialtrojan
-wget -O del-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-tr.sh" && chmod +x renew-tr
-wget -O cek-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-tr.sh" && chmod +x cek-tr
+#wget -O add-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-tr.sh" && chmod +x add-tr
+#wget -O trialtrojan "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialtrojan.sh" && chmod +x trialtrojan
+#wget -O del-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-tr.sh" && chmod +x del-tr
+#wget -O renew-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-tr.sh" && chmod +x renew-tr
+#wget -O cek-tr "https://raw.githubusercontent.com/halluboys/vmess/main/xray/cek-tr.sh" && chmod +x cek-tr
 
 # shadowsocks
-wget -O add-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-ssws.sh" && chmod +x add-ssws
-wget -O trialssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialssws.sh" && chmod +x trialssws
-wget -O del-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ssws.sh" && chmod +x del-ssws
-wget -O renew-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-ssws.sh" && chmod +x renew-ssws
+#wget -O add-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/add-ssws.sh" && chmod +x add-ssws
+#wget -O trialssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/trialssws.sh" && chmod +x trialssws
+#wget -O del-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ssws.sh" && chmod +x del-ssws
+#wget -O renew-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
 # trojango
 #wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
