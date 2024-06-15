@@ -645,7 +645,7 @@ wget -O certv2ray "https://raw.githubusercontent.com/halluboys/vmess/main/xray/c
 wget -O speedtest "https://raw.githubusercontent.com/halluboys/vmess/main/ssh/speedtest_cli.py" && chmod +x speedtest
 wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-backup.sh" && chmod +x m-backup
 wget https://raw.githubusercontent.com/halluboys/vmess/main/encrypt/epro && chmod +x epro
-
+dos2unix m-backup
 
 # trojango
 #wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
