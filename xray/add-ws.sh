@@ -42,7 +42,7 @@ asu=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "${domain}",
+      "add": "quiz.staging.vidio.com",
       "port": "443",
       "id": "${uuid}",
       "aid": "0",
@@ -57,7 +57,7 @@ ask=`cat<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "${domain}",
+      "add": "quiz.staging.vidio.com",
       "port": "80",
       "id": "${uuid}",
       "aid": "0",
