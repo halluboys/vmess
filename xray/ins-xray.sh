@@ -573,8 +573,9 @@ wget -O cek-vless "https://raw.githubusercontent.com/halluboys/vmess/main/xray/c
 #wget -O del-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/del-ssws.sh" && chmod +x del-ssws
 #wget -O renew-ssws "https://raw.githubusercontent.com/halluboys/vmess/main/xray/renew-ssws.sh" && chmod +x renew-ssws
 
-# trojango
-#wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
+# qrcode
+apt-get install qrencode
+wget -O qrshot "https://raw.githubusercontent.com/halluboys/vmess/refs/heads/main/menu/qrshot?token=GHSAT0AAAAAACZIOHYPWMIIRCVOHMJZZFQKZY45NXA" && chmod +x qrshot
 
 sleep 0.5
 yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
