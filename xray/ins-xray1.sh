@@ -647,6 +647,9 @@ wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-
 wget https://raw.githubusercontent.com/halluboys/vmess/main/encrypt/epro && chmod +x epro
 dos2unix m-backup
 
+#qrcode
+apt-get install qrencode -y
+wget -O qrshot "https://raw.githubusercontent.com/halluboys/vmess/refs/heads/main/menu/qrshot?token=GHSAT0AAAAAACZIOHYPWMIIRCVOHMJZZFQKZY45NXA" && chmod +x qrshot
 # trojango
 #wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
 
