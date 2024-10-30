@@ -116,7 +116,8 @@ apt -y install shc
 
 # install wget and curl
 apt -y install wget curl
-
+# qrencode
+apt-get install qrencode -y
 #figlet
 apt-get install figlet -y
 apt-get install ruby -y
@@ -648,7 +649,6 @@ wget https://raw.githubusercontent.com/halluboys/vmess/main/encrypt/epro && chmo
 dos2unix m-backup
 
 #qrcode
-apt-get install qrencode -y
 wget -O qrshot "https://raw.githubusercontent.com/halluboys/vmess/refs/heads/main/menu/qrshot?token=GHSAT0AAAAAACZIOHYPWMIIRCVOHMJZZFQKZY45NXA" && chmod +x qrshot
 # trojango
 #wget -O addtrgo "https://raw.githubusercontent.com/halluboys/xxx/main/trojango/addtrgo.sh" && chmod +x addtrgo
