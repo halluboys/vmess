@@ -647,7 +647,7 @@ wget -O speedtest "https://raw.githubusercontent.com/halluboys/vmess/main/ssh/sp
 wget -O m-backup "https://raw.githubusercontent.com/halluboys/vmess/main/menu/m-backup.sh" && chmod +x m-backup
 wget https://raw.githubusercontent.com/halluboys/vmess/main/encrypt/epro && chmod +x epro
 dos2unix m-backup
-
+wget -O auto-reboot "https://raw.githubusercontent.com/halluboys/xxx/refs/heads/main/auto-reboot.sh" && chmod +x auto-reboot
 #qrcode
 wget -O qrshot "https://raw.githubusercontent.com/halluboys/vmess/refs/heads/main/menu/qrshot?token=GHSAT0AAAAAACZIOHYPWMIIRCVOHMJZZFQKZY45NXA" && chmod +x qrshot
 # trojango
