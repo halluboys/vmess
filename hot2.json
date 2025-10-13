@@ -331,7 +331,7 @@
     },
     {
 
-        "name": "myPRIO Diamond X 12bln",
+        "name": "myPRIO Silver X 3bln",
 
         "price": "Rp 0",
 
@@ -353,7 +353,7 @@
 
                 "option_name": "JANGAN DI TEST PURCHASE",
 
-                "order": 37
+                "order": 3
 
             },
 
@@ -381,7 +381,7 @@
 
         "ask_overwrite": false,
 
-        "overwrite_amount": 2093000,
+        "overwrite_amount": 328000,
 
         "token_confirmation_idx": 0,
 
@@ -448,4 +448,5 @@
 
     }
 ]
+
 
