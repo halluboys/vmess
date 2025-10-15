@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO Silver Xxx",
+        "name": "myPRIO test",
         "price": "Rp 0",
         "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -230,12 +230,12 @@
                 "migration_type": "NONE",
                 "variant_code": "499a606a-15bf-4b50-ba66-deb866fb4b35",
                 "option_name": "",
-                "order": 4
+                "order": 3
             }
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 192000,
+        "overwrite_amount": 233500,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     }
