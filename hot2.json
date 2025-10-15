@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO Silver X6bln",
+        "name": "myPRIO Silver 7",
         "price": "Rp 0",
         "detail": "myPRIO Silver X 6bln.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -221,7 +221,7 @@
                 "migration_type": "NONE",
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
                 "option_name": "JANGAN DI TEST PURCHASE",
-                "order": 18
+                "order": 27
             },
             {
                 "family_name": "",
@@ -230,12 +230,12 @@
                 "migration_type": "NONE",
                 "variant_code": "499a606a-15bf-4b50-ba66-deb866fb4b35",
                 "option_name": "",
-                "order": 5
+                "order": 4
             }
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 0,
+        "overwrite_amount": 102000,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     }
