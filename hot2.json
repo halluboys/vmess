@@ -1165,7 +1165,7 @@
         "amount_idx": -1
     },
     {
-        "name": "Prio Gold 12 Bulan",
+        "name": "Prio silver 3 Bulan",
         "price": "Rp 0",
         "detail": "Memanggil debt collector XL ke rumah kalian.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -1175,8 +1175,8 @@
                 "is_enterprise": false,
                 "migration_type": "NONE",
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
-                "option_name": "myPRIO Gold",
-                "order": 10
+                "option_name": "myPRIO X Silver",
+                "order": 18
             },
             {
                 "family_name": "",
@@ -1185,12 +1185,12 @@
                 "migration_type": "NONE",
                 "variant_code": "590056ce-4578-40cd-afce-fb9729620ca2",
                 "option_name": "",
-                "order": 10
+                "order": 5
             }
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 1031500,
+        "overwrite_amount": 543000,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
@@ -1225,5 +1225,6 @@
         "amount_idx": -1
     }
 ]
+
 
 
