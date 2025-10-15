@@ -238,5 +238,35 @@
         "overwrite_amount": 233500,
         "token_confirmation_idx": 0,
         "amount_idx": -1
+    },
+    {
+        "name": "myPRIO test 2",
+        "price": "Rp 0",
+        "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
+        "packages": [
+            {
+                "family_name": "myPRIO X Unlimited",
+                "family_code": "162d261b-05c7-450c-9b7a-1873b160140c",
+                "is_enterprise": false,
+                "migration_type": "NONE",
+                "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
+                "option_name": "JANGAN DI TEST PURCHASE",
+                "order": 27
+            },
+            {
+                "family_name": "Xtra Combo Plus",
+                "family_code": "23b71540-8785-4abe-816d-e9b4efa48f95",
+                "is_enterprise": false,
+                "migration_type": "NONE",
+                "variant_code": "8862ec0a-4651-423b-b733-3a9608db34fa",
+                "option_name": "69GB",
+                "order": 19
+            }
+        ],
+        "payment_for": "BUY_PACKAGE",
+        "ask_overwrite": false,
+        "overwrite_amount": -1,
+        "token_confirmation_idx": 0,
+        "amount_idx": -1
     }
 ]
