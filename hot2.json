@@ -210,9 +210,9 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO Silver",
+        "name": "myPRIO Silver Xxx",
         "price": "Rp 0",
-        "detail": "myPRIO Silver X 6bln.\nDWYOR\nSupported payment: Balance.",
+        "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
             {
                 "family_name": "myPRIO X Unlimited",
