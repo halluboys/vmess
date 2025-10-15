@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO Xslimw",
+        "name": "myPRIO XnOw",
         "price": "Rp 0",
         "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -220,7 +220,7 @@
                 "is_enterprise": false,
                 "migration_type": "NONE",
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
-                "option_name": "JANGAN DI TEST PURCHASE",
+                "option_name": "",
                 "order": 18
             },
             {
