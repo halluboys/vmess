@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO test",
+        "name": "myPRIO testx",
         "price": "Rp 0",
         "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -235,7 +235,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 233500,
+        "overwrite_amount": 73000,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
