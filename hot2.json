@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO 6bln",
+        "name": "myPRIO 6blnGold",
         "price": "Rp 0",
         "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -235,7 +235,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 143500,
+        "overwrite_amount": 773500,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     }
