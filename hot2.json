@@ -210,7 +210,7 @@
         "amount_idx": -1
     },
     {
-        "name": "myPRIO 6blnGold",
+        "name": "myPRIO 12blnGold",
         "price": "Rp 0",
         "detail": "myPRIO Silver.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -221,7 +221,7 @@
                 "migration_type": "NONE",
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
                 "option_name": "",
-                "order": 17
+                "order": 10
             },
             {
                 "family_name": "",
@@ -235,7 +235,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 773500,
+        "overwrite_amount": 113500,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     }
