@@ -221,7 +221,7 @@
                 "migration_type": "NONE",
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
                 "option_name": "",
-                "order": 4
+                "order": 10
             },
             {
                 "family_name": "",
@@ -235,7 +235,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 398500,
+        "overwrite_amount": 143500,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     }
