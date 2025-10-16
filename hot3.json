@@ -90,7 +90,7 @@
         "amount_idx": -1
     },
     {
-        "name": "Masa TOT 45 Hari + 50GB*",
+        "name": "Masa TOT 45 Hari50GB*",
         "price": "Rp0",
         "detail": "Membuat masa aktif menjadi 45 hari dari tanggal pembelian. Tidak bisa akumulasi.\nSupported payment: Balance.\nJangan di-overwrite.\n\n*Bonus kuota bersama 50GB untuk kartu pengelola XL Satu Home/Fiber.",
         "packages": [
@@ -115,7 +115,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": true,
-        "overwrite_amount": -1,
+        "overwrite_amount": 182000,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
