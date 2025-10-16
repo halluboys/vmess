@@ -120,7 +120,7 @@
         "amount_idx": -1
     },
     {
-        "name": "Hyfe 500GB",
+        "name": "Hyfe 5GB",
         "price": "Rp 0",
         "detail": "Hyfe trial Fup 5GB masa aktif 7 hari. Bisa akumulasi.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -131,7 +131,7 @@
                 "migration_type": "NONE",
                 "variant_code": "a0d608d9-84bb-4c26-a4e0-725dac09036c",
                 "option_name": "",
-                "order": 1
+                "order": 27
             },
             {
                 "family_name": "",
@@ -145,7 +145,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 163000,
+        "overwrite_amount": -0,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
