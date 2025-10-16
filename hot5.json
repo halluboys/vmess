@@ -120,7 +120,7 @@
         "amount_idx": -1
     },
     {
-        "name": "Hyfe 5GB",
+        "name": "Hyfe 5GB ok",
         "price": "Rp 0",
         "detail": "Hyfe trial Fup 5GB masa aktif 7 hari. Bisa akumulasi.\nDWYOR\nSupported payment: Balance.",
         "packages": [
@@ -145,7 +145,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": 1000,
+        "overwrite_amount": 0,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
