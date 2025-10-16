@@ -145,7 +145,7 @@
         ],
         "payment_for": "BUY_PACKAGE",
         "ask_overwrite": false,
-        "overwrite_amount": -0,
+        "overwrite_amount": -1,
         "token_confirmation_idx": 0,
         "amount_idx": -1
     },
