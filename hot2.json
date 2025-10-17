@@ -552,9 +552,9 @@
 
             {
 
-                "family_name": "myPRIO X Unlimited",
+                "family_name": "Kuota Worry Free Worry Free",
 
-                "family_code": "162d261b-05c7-450c-9b7a-1873b160140c",
+                "family_code": "02378733-eb10-40b0-8d33-74d36795f360",
 
                 "is_enterprise": false,
 
@@ -562,9 +562,9 @@
 
                 "variant_code": "abf19c56-c4a8-4acd-9810-83dc7c439176",
 
-                "option_name": "JANGAN DI TEST PURCHASE",
+                "option_name": "Kuota Worry Free Worry Free",
 
-                "order": 27
+                "order": 1
 
             },
 
@@ -582,7 +582,7 @@
 
                 "option_name": "",
 
-                "order": 5
+                "order": 1
 
             }
 
@@ -592,7 +592,7 @@
 
         "ask_overwrite": false,
 
-        "overwrite_amount": 73000,
+        "overwrite_amount": 257000,
 
         "token_confirmation_idx": 0,
 
