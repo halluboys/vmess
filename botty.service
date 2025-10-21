@@ -1,0 +1,16 @@
+[Unit]
+Description=My Telegram Bot Service
+After=network.target
+
+[Service]
+User=root
+Group=root
+
+WorkingDirectory=/root/botty
+ExecStart=/root/venv/bin/python3 /root/botty/botfix.py
+
+Restart=always
+RestartSec=10
+
+[Install] 
+WantedBy=multi-user.target
