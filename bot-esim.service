@@ -1,0 +1,14 @@
+[Unit]
+Description=SUNSET Telegram Bot eSIM
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/sunset
+ExecStart=/root/sunset/venv/bin/python /root/sunset/bot_esim.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
