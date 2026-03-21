@@ -7,7 +7,8 @@ export default {
 
       const webhook = env.WEBHOOK_URL;
       const subject = message.headers.get("subject") || "";
-      const text = await message.text();
+
+      const rawEmail = await new Response(message.raw).text();
 
       const res = await fetch(webhook, {
         method: "POST",
@@ -18,7 +19,7 @@ export default {
           from: message.from,
           to: message.to,
           subject,
-          text,
+          raw: rawEmail,
         }),
       });
 
