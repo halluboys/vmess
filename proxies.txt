@@ -1,0 +1,151 @@
+138.2.47.198:1080:JP:31898:Oracle Corporation:4316.22 ms:anonymous
+206.123.156.205:6355:US:22612:Namecheap, Inc.:4361.06 ms:anonymous
+142.54.226.214:4145:US:46562:Performive LLC:4155.72 ms:anonymous
+68.71.242.118:4145:US:46562:Performive LLC:4140.15 ms:anonymous
+199.102.107.145:4145:US:46562:Performive LLC:4139.46 ms:anonymous
+98.182.171.161:4145:US:22773:Cox Communications Inc.:4243.11 ms:anonymous
+24.249.199.4:4145:US:22773:Cox Communications Inc.:4242.84 ms:anonymous
+98.182.147.97:4145:US:22773:Cox Communications Inc.:4224.96 ms:anonymous
+192.252.220.92:17328:US:46562:Performive LLC:4115.74 ms:anonymous
+206.123.156.228:9137:US:31898:Oracle Corporation:4221.60 ms:anonymous
+192.252.211.197:14921:US:46562:Performive LLC:4120.24 ms:anonymous
+216.68.128.121:4145:US:6181:Cincinnati Bell Telephone Company LLC:4235.57 ms:anonymous
+72.207.33.64:4145:US:22773:Cox Communications Inc.:4148.25 ms:anonymous
+142.54.232.6:4145:US:46562:Performive LLC:4142.10 ms:anonymous
+192.111.137.35:4145:US:46562:Performive LLC:4017.87 ms:anonymous
+192.111.139.163:19404:US:46562:Performive LLC:4014.28 ms:anonymous
+184.181.217.210:4145:US:22773:Cox Communications Inc.:4104.95 ms:anonymous
+98.191.0.37:4145:US:22773:Cox Communications Inc.:4045.87 ms:anonymous
+72.195.34.35:27360:US:22773:Cox Communications Inc.:4062.38 ms:anonymous
+68.71.249.158:4145:US:46562:Performive LLC:4059.57 ms:anonymous
+198.8.94.174:39078:US:46562:Performive LLC:3956.72 ms:anonymous
+142.54.235.9:4145:US:46562:Performive LLC:4017.87 ms:anonymous
+184.178.172.13:15311:US:22773:Cox Communications Inc.:4021.83 ms:anonymous
+184.181.217.213:4145:US:22773:Cox Communications Inc.:3983.04 ms:anonymous
+192.252.220.89:4145:US:46562:Performive LLC:3977.92 ms:anonymous
+184.178.172.3:4145:US:22773:Cox Communications Inc.:3954.53 ms:anonymous
+192.252.214.17:4145:US:46562:Performive LLC:3877.42 ms:anonymous
+72.195.114.184:4145:US:22773:Cox Communications Inc.:3904.11 ms:anonymous
+107.152.98.5:4145:US:46562:Performive LLC:3900.11 ms:anonymous
+98.188.47.150:4145:US:22773:Cox Communications Inc.:3866.95 ms:anonymous
+98.181.137.83:4145:US:22773:Cox Communications Inc.:3865.86 ms:anonymous
+70.166.65.160:4145:US:22773:Cox Communications Inc.:3862.40 ms:anonymous
+192.252.215.5:16137:US:46562:Performive LLC:3799.99 ms:anonymous
+206.123.156.189:4452:VN:135905:VIETNAM POSTS AND TELECOMMUNICATIONS GROUP:4288.63 ms:anonymous
+206.123.156.228:6302:DZ:30781:Free Pro SAS:3813.84 ms:anonymous
+72.37.217.3:4145:US:46562:Performive LLC:3658.33 ms:anonymous
+74.119.147.209:4145:US:46562:Performive LLC:3559.44 ms:anonymous
+184.181.217.206:4145:US:22773:Cox Communications Inc.:3563.33 ms:anonymous
+184.170.249.65:4145:US:46562:Performive LLC:3498.40 ms:anonymous
+72.205.0.67:4145:US:22773:Cox Communications Inc.:3581.91 ms:anonymous
+98.190.239.3:4145:US:22773:Cox Communications Inc.:3540.27 ms:anonymous
+68.71.252.38:4145:US:46562:Performive LLC:3520.40 ms:anonymous
+72.37.216.68:4145:US:46562:Performive LLC:3540.76 ms:anonymous
+192.111.129.150:4145:US:46562:Performive LLC:3419.62 ms:anonymous
+69.61.200.104:36181:US:6181:Cincinnati Bell Telephone Company LLC:3521.61 ms:anonymous
+206.123.156.219:43034:US:19871:Network Solutions, LLC:4765.69 ms:anonymous
+192.111.135.17:18302:US:46562:Performive LLC:3377.25 ms:anonymous
+142.54.237.34:4145:US:46562:Performive LLC:3485.84 ms:anonymous
+174.77.111.198:49547:US:22773:Cox Communications Inc.:3482.55 ms:anonymous
+67.201.33.10:25283:US:46562:Performive LLC:3443.24 ms:anonymous
+123.54.197.21:23684:CN:141739:China Telecom:4601.57 ms:anonymous
+193.233.254.82:1080:DE:213887:WAIcore Ltd:3461.79 ms:anonymous
+123.54.197.19:22902:CN:56047:China Mobile Communications Corporation:4667.94 ms:anonymous
+98.175.31.195:4145:US:22773:Cox Communications Inc.:3421.20 ms:anonymous
+184.181.217.194:4145:US:22773:Cox Communications Inc.:3407.09 ms:anonymous
+192.252.211.193:4145:US:46562:Performive LLC:3318.76 ms:anonymous
+98.188.47.132:4145:US:22773:Cox Communications Inc.:3381.65 ms:anonymous
+184.178.172.28:15294:US:22773:Cox Communications Inc.:3383.53 ms:anonymous
+67.201.35.145:4145:US:46562:Performive LLC:3360.24 ms:anonymous
+67.201.58.190:4145:US:46562:Performive LLC:3345.95 ms:anonymous
+123.54.197.49:22335:CN:4837:CHINA UNICOM China169 Backbone:4640.97 ms:anonymous
+199.102.104.70:4145:US:46562:Performive LLC:3342.95 ms:anonymous
+192.104.242.158:4145:US:20081:NET2ATLANTA.COM LLC:3345.83 ms:anonymous
+68.1.210.163:4145:US:22773:Cox Communications Inc.:3328.23 ms:anonymous
+192.252.208.67:14287:US:46562:Performive LLC:3299.92 ms:anonymous
+199.102.105.242:4145:US:46562:Performive LLC:3322.58 ms:anonymous
+68.71.245.206:4145:US:46562:Performive LLC:3263.12 ms:anonymous
+208.102.51.6:58208:US:6181:Cincinnati Bell Telephone Company LLC:3302.05 ms:anonymous
+192.252.216.81:4145:US:46562:Performive LLC:3175.76 ms:anonymous
+192.252.209.158:4145:US:46562:Performive LLC:3200.79 ms:anonymous
+98.170.57.241:4145:US:22773:Cox Communications Inc.:3226.42 ms:anonymous
+162.253.68.97:4145:US:46562:Performive LLC:3206.29 ms:anonymous
+198.177.252.24:4145:US:20081:NET2ATLANTA.COM LLC:3649.43 ms:anonymous
+184.170.251.30:11288:US:46562:Performive LLC:3076.21 ms:anonymous
+72.207.113.97:4145:US:22773:Cox Communications Inc.:3168.34 ms:anonymous
+72.195.101.99:4145:US:22773:Cox Communications Inc.:3124.01 ms:anonymous
+192.111.134.10:4145:US:46562:Performive LLC:3104.52 ms:anonymous
+68.1.210.189:4145:US:22773:Cox Communications Inc.:3089.29 ms:anonymous
+142.54.239.1:4145:US:46562:Performive LLC:3061.34 ms:anonymous
+68.71.241.33:4145:US:46562:Performive LLC:3082.92 ms:anonymous
+184.178.172.11:4145:US:22773:Cox Communications Inc.:2984.14 ms:anonymous
+174.75.211.193:4145:US:22773:Cox Communications Inc.:3004.02 ms:anonymous
+184.170.248.5:4145:US:46562:Performive LLC:2880.28 ms:anonymous
+142.54.236.97:4145:US:46562:Performive LLC:2916.69 ms:anonymous
+199.229.254.129:4145:US:46562:Performive LLC:2799.91 ms:anonymous
+74.119.144.60:4145:US:46562:Performive LLC:2880.42 ms:anonymous
+72.195.34.41:4145:US:22773:Cox Communications Inc.:2907.18 ms:anonymous
+72.195.114.169:4145:US:22773:Cox Communications Inc.:2902.46 ms:anonymous
+206.123.156.212:4096:VN:7602:Sai gon Postel Corporation:3907.26 ms:anonymous
+98.170.57.249:4145:US:22773:Cox Communications Inc.:2861.20 ms:anonymous
+70.166.167.38:57728:US:22773:Cox Communications Inc.:2868.50 ms:anonymous
+199.58.185.9:4145:US:46562:Performive LLC:2819.74 ms:anonymous
+198.177.254.157:4145:US:20081:NET2ATLANTA.COM LLC:2738.78 ms:anonymous
+192.252.209.155:14455:US:46562:Performive LLC:2737.49 ms:anonymous
+174.77.111.196:4145:US:22773:Cox Communications Inc.:2842.28 ms:anonymous
+199.116.112.6:4145:US:46562:Performive LLC:2799.66 ms:anonymous
+208.65.90.3:4145:US:20081:NET2ATLANTA.COM LLC:2826.09 ms:anonymous
+192.111.130.2:4145:US:46562:Performive LLC:2759.62 ms:anonymous
+72.195.34.58:4145:US:22773:Cox Communications Inc.:2769.41 ms:anonymous
+192.111.139.162:4145:US:46562:Performive LLC:2675.72 ms:anonymous
+192.111.137.37:18762:US:46562:Performive LLC:2639.46 ms:anonymous
+192.252.214.20:15864:US:46562:Performive LLC:2596.91 ms:anonymous
+192.111.138.29:4145:US:46562:Performive LLC:2612.60 ms:anonymous
+184.178.172.26:4145:US:22773:Cox Communications Inc.:2700.23 ms:anonymous
+142.54.228.193:4145:US:46562:Performive LLC:2682.06 ms:anonymous
+72.195.34.60:27391:US:22773:Cox Communications Inc.:2680.80 ms:anonymous
+194.163.167.32:1080:GB:51167:Contabo GmbH:3711.33 ms:anonymous
+206.123.156.178:4547:VN:45899:VNPT Corp:3903.13 ms:anonymous
+72.223.188.67:4145:US:22773:Cox Communications Inc.:2640.60 ms:anonymous
+184.178.172.18:15280:US:22773:Cox Communications Inc.:2600.09 ms:anonymous
+68.71.243.14:4145:US:46562:Performive LLC:2597.45 ms:anonymous
+199.187.210.54:4145:US:46562:Performive LLC:2596.61 ms:anonymous
+98.178.72.30:4145:US:22773:Cox Communications Inc.:2597.07 ms:anonymous
+104.200.152.30:4145:US:46562:Performive LLC:2594.51 ms:anonymous
+184.178.172.25:15291:US:22773:Cox Communications Inc.:2581.68 ms:anonymous
+206.123.156.178:6924:US:22612:Namecheap, Inc.:2798.11 ms:anonymous
+199.102.106.94:4145:US:46562:Performive LLC:2521.84 ms:anonymous
+184.178.172.14:4145:US:22773:Cox Communications Inc.:2506.81 ms:anonymous
+159.223.53.194:1080:SG:14061:DigitalOcean, LLC:3077.55 ms:anonymous
+174.64.199.79:4145:US:22773:Cox Communications Inc.:2445.02 ms:anonymous
+68.71.247.130:4145:US:46562:Performive LLC:2427.78 ms:anonymous
+192.111.130.5:17002:US:46562:Performive LLC:2421.66 ms:anonymous
+45.59.117.163:8080:CH:14956:RouterHosting LLC:2786.63 ms:anonymous
+184.181.178.33:4145:US:22773:Cox Communications Inc.:2399.42 ms:anonymous
+98.175.31.222:4145:US:22773:Cox Communications Inc.:2380.70 ms:anonymous
+199.58.184.97:4145:US:46562:Performive LLC:2363.60 ms:anonymous
+72.206.74.126:4145:US:22773:Cox Communications Inc.:2363.28 ms:anonymous
+70.166.167.55:57745:US:22773:Cox Communications Inc.:2341.03 ms:anonymous
+72.49.49.11:31034:US:6181:Cincinnati Bell Telephone Company LLC:2355.30 ms:anonymous
+24.249.199.12:4145:US:22773:Cox Communications Inc.:2339.85 ms:anonymous
+192.252.215.2:4145:US:46562:Performive LLC:2321.50 ms:anonymous
+192.111.137.34:18765:US:46562:Performive LLC:2308.36 ms:anonymous
+66.42.224.229:41679:US:6181:Cincinnati Bell Telephone Company LLC:2331.45 ms:anonymous
+184.178.172.5:15303:US:22773:Cox Communications Inc.:2262.42 ms:anonymous
+123.54.197.16:20179:CN:4134:Chinanet:4367.99 ms:anonymous
+206.123.156.178:5813:VN:135905:VIETNAM POSTS AND TELECOMMUNICATIONS GROUP:3192.00 ms:anonymous
+206.123.156.179:6208:IN:134291:TECHNO FAQ DIGITAL MEDIA:3189.84 ms:anonymous
+206.123.156.206:7777:NL:22612:Namecheap, Inc.:2804.30 ms:anonymous
+206.123.156.202:4981:US:46606:Unified Layer:3154.31 ms:anonymous
+123.54.197.51:20904:CN:4134:Chinanet:4102.49 ms:anonymous
+206.123.156.192:17155:VN:135905:VIETNAM POSTS AND TELECOMMUNICATIONS GROUP:3373.21 ms:anonymous
+72.214.108.67:4145:US:22773:Cox Communications Inc.:2084.07 ms:anonymous
+184.181.217.220:4145:US:22773:Cox Communications Inc.:2082.43 ms:anonymous
+198.177.253.13:4145:US:20081:NET2ATLANTA.COM LLC:2027.14 ms:anonymous
+98.191.0.47:4145:US:22773:Cox Communications Inc.:2024.18 ms:anonymous
+206.123.156.185:9026:NL:22612:Namecheap, Inc.:2590.84 ms:anonymous
+206.123.156.185:6213:US:19871:Network Solutions, LLC:3349.11 ms:anonymous
+184.181.217.201:4145:US:22773:Cox Communications Inc.:1956.51 ms:anonymous
+72.195.34.42:4145:US:22773:Cox Communications Inc.:1954.99 ms:anonymous
+98.178.72.21:10919:US:22773:Cox Communications Inc.:1919.36 ms:anonymous
+206.123.156.200:4731:US:19871:Network Solutions, LLC:3076.40 ms:anonymous
