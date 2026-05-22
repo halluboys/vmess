@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>main.py &middot; halluboys/dot</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
+  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
+  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;font-size:.8rem;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);text-decoration:none;}
+  .pill{display:inline-flex;align-items:center;padding:.05rem .55rem;font-size:.7rem;border-radius:999px;border:1px solid var(--gh-border);color:var(--gh-fg-muted);}
+  .link{color:var(--gh-accent);text-decoration:none;}
+  .link:hover{text-decoration:underline;}
+  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
+  .file-lineno{display:inline-block;width:50px;text-align:right;padding-right:16px;color:var(--gh-fg-muted);user-select:none;}
+  .file-line:hover{background:rgba(177,186,196,.06);}
+  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;z-index:50;}
+  .kw{color:#ff7b72;} .str{color:#a5d6ff;} .com{color:#8b949e;} .fn{color:#d2a8ff;} .num{color:#79c0ff;}
+</style>
+</head>
+<body>
+<span class="label">5/7 &middot; File Viewer</span>
+
+<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
+  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+    <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+    <input placeholder="Search repositories..." class="flex-1 max-w-md bg-transparent border rounded-md px-3 py-1 text-sm" style="border-color:var(--gh-border);">
+    <div class="flex-1"></div>
+    <nav class="flex items-center gap-4 text-sm">
+      <a href="02-dashboard.html" style="color:var(--gh-fg-muted);">Repositories</a>
+      <span style="color:var(--gh-fg-muted);">Sign out</span>
+      <div class="w-8 h-8 rounded-full" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"></div>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 py-6">
+  <div class="mb-5">
+    <div class="flex flex-wrap items-baseline gap-2 mb-3">
+      <a href="03-repo-home.html" class="text-xl font-semibold link">halluboys / dot</a>
+      <span class="pill">Private</span>
+    </div>
+    <nav class="flex flex-wrap gap-1 text-sm" style="border-bottom:1px solid var(--gh-border);">
+      <a href="03-repo-home.html" class="px-3 py-2 -mb-px font-semibold border-b-2" style="border-color:#f78166;">Code</a>
+      <a href="06-commits.html" class="px-3 py-2 -mb-px" style="color:var(--gh-fg-muted);">Commits</a>
+    </nav>
+  </div>
+
+  <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
+    <span class="pill">main</span>
+    <a href="03-repo-home.html" class="link font-semibold">dot</a>
+    <span style="color:var(--gh-fg-muted);">/</span>
+    <span class="font-semibold">main.py</span>
+  </div>
+
+  <div class="card overflow-hidden">
+    <div class="px-4 py-2 flex flex-wrap items-center gap-3 text-xs" style="border-bottom:1px solid var(--gh-border); color:var(--gh-fg-muted);">
+      <span>347 lines</span>
+      <span>&middot;</span>
+      <span>14.7 KB</span>
+      <div class="ml-auto flex items-center gap-1">
+        <a href="06-commits.html" class="btn">History</a>
+        <a href="#" class="btn">Raw</a>
+        <a href="#" class="btn" title="Download">
+          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5z"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-sm" style="background:var(--gh-bg2);">
+      <table class="w-full mono text-xs leading-5">
+        <tbody>
+          <tr class="file-line"><td class="file-lineno">1</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="com">"""dot - XL/Axis CLI package tool main entry."""</span></td></tr>
+          <tr class="file-line"><td class="file-lineno">2</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> __future__ <span class="kw">import</span> annotations</td></tr>
+          <tr class="file-line"><td class="file-lineno">3</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">4</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">import</span> sys</td></tr>
+          <tr class="file-line"><td class="file-lineno">5</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> banner <span class="kw">import</span> show_banner</td></tr>
+          <tr class="file-line"><td class="file-lineno">6</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> auth_helper <span class="kw">import</span> login_flow</td></tr>
+          <tr class="file-line"><td class="file-lineno">7</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> ui <span class="kw">import</span> menu, prompt</td></tr>
+          <tr class="file-line"><td class="file-lineno">8</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">9</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">10</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">def</span> <span class="fn">main</span>() -&gt; <span class="kw">int</span>:</td></tr>
+          <tr class="file-line"><td class="file-lineno">11</td><td class="pr-4 whitespace-pre-wrap break-all">    show_banner()</td></tr>
+          <tr class="file-line"><td class="file-lineno">12</td><td class="pr-4 whitespace-pre-wrap break-all">    session = login_flow()</td></tr>
+          <tr class="file-line"><td class="file-lineno">13</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">if</span> <span class="kw">not</span> session:</td></tr>
+          <tr class="file-line"><td class="file-lineno">14</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">print</span>(<span class="str">"Login dibatalkan."</span>)</td></tr>
+          <tr class="file-line"><td class="file-lineno">15</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">return</span> <span class="num">1</span></td></tr>
+          <tr class="file-line"><td class="file-lineno">16</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">17</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">while</span> <span class="kw">True</span>:</td></tr>
+          <tr class="file-line"><td class="file-lineno">18</td><td class="pr-4 whitespace-pre-wrap break-all">        choice = menu([</td></tr>
+          <tr class="file-line"><td class="file-lineno">19</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Lihat paket aktif"</span>,</td></tr>
+          <tr class="file-line"><td class="file-lineno">20</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Beli paket baru"</span>,</td></tr>
+          <tr class="file-line"><td class="file-lineno">21</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Cek kuota"</span>,</td></tr>
+          <tr class="file-line"><td class="file-lineno">22</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Logout"</span>,</td></tr>
+          <tr class="file-line"><td class="file-lineno">23</td><td class="pr-4 whitespace-pre-wrap break-all">        ])</td></tr>
+          <tr class="file-line"><td class="file-lineno">24</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">if</span> choice == <span class="num">3</span>:</td></tr>
+          <tr class="file-line"><td class="file-lineno">25</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="kw">break</span></td></tr>
+          <tr class="file-line"><td class="file-lineno">26</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">27</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">return</span> <span class="num">0</span></td></tr>
+          <tr class="file-line"><td class="file-lineno">28</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">29</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
+          <tr class="file-line"><td class="file-lineno">30</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:</td></tr>
+          <tr class="file-line"><td class="file-lineno">31</td><td class="pr-4 whitespace-pre-wrap break-all">    sys.exit(main())</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+</body>
+</html>
