@@ -3,57 +3,71 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sign in &middot; GH-DWD</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Sign in to GH-DWD</title>
+<link rel="stylesheet" href="_styles.css">
 <style>
-  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
-  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
-  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;font-size:.8rem;font-weight:500;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);}
-  .btn-primary{background:#238636;border-color:rgba(240,246,252,.1);color:#fff;}
-  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
-  .link{color:var(--gh-accent);}
-  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;}
+  body { background: var(--gh-canvas); }
+  .login-page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 24px 16px; }
+  .login-logo svg { width: 48px; height: 48px; fill: var(--gh-fg); }
+  .login-heading { font-size: 24px; font-weight: 300; margin: 16px 0 24px; }
+  .login-card {
+    width: 100%; max-width: 308px;
+    background: var(--gh-canvas-overlay);
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    padding: 16px;
+  }
+  .login-card label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .login-card .label-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .login-card .label-row a { font-size: 12px; }
+  .login-card input { margin-bottom: 16px; }
+  .login-card .btn-primary { width: 100%; height: 32px; font-size: 14px; }
+  .login-extra {
+    width: 100%; max-width: 308px;
+    margin-top: 16px;
+    padding: 16px; text-align: center;
+    background: transparent;
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    font-size: 14px;
+  }
 </style>
 </head>
 <body>
-<span class="label">1/7 &middot; Login Page</span>
 
-<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
-    <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-  </div>
-</header>
+<main class="login-page">
+  <a class="login-logo" href="#" aria-label="Homepage">
+    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+  </a>
+  <h1 class="login-heading">Sign in to GH-DWD</h1>
 
-<main class="max-w-6xl mx-auto px-4 py-6">
-  <div class="max-w-sm mx-auto mt-12">
-    <h1 class="text-xl font-light text-center mb-6">Sign in to GH-DWD</h1>
-    <div class="card p-6">
-      <form class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium mb-1">Username</label>
-          <input value="halluboys"
-                 class="w-full bg-transparent border rounded-md px-3 py-1.5 text-sm focus:outline-none"
-                 style="border-color:var(--gh-border);">
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">
-            Personal Access Token
-            <a href="#" class="link text-xs ml-1">(buat di sini)</a>
-          </label>
-          <input type="password" value="ghp_xxxxxxxxxxxxxxxxxxx"
-                 class="w-full bg-transparent border rounded-md px-3 py-1.5 text-sm mono focus:outline-none"
-                 style="border-color:var(--gh-border);">
-        </div>
-        <button type="button" class="btn btn-primary w-full justify-center">Sign in</button>
-      </form>
+  <form class="login-card">
+    <label for="username">Username</label>
+    <input id="username" class="input" type="text" value="halluboys" autocomplete="username">
+
+    <div class="label-row">
+      <label for="token">Personal Access Token</label>
+      <a href="https://github.com/settings/tokens" target="_blank">Buat token</a>
     </div>
-    <p class="text-center text-xs mt-4" style="color:var(--gh-fg-muted);">
-      Token butuh scope <code class="bg-black/30 px-1 rounded">repo</code> untuk akses repo private.
-      <br>Token disimpan di session server-side.
-    </p>
+    <input id="token" class="input mono" type="password" value="ghp_xxxxxxxxxxxxxxxxxxxxxx" placeholder="ghp_... atau github_pat_...">
+
+    <button type="button" class="btn btn-primary">Sign in</button>
+  </form>
+
+  <div class="login-extra">
+    Token butuh scope <code class="mono" style="background:rgba(110,118,129,.4); padding: 1px 4px; border-radius: 3px;">repo</code> untuk akses repo private.
+    <div style="margin-top: 8px; color: var(--gh-fg-muted); font-size: 12px;">
+      Token disimpan di session server-side, tidak ke browser.
+    </div>
   </div>
 </main>
+
+<footer class="app-footer">
+  <ul style="justify-content: center;">
+    <li><a href="#">Terms</a></li>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Status</a></li>
+  </ul>
+</footer>
+
 </body>
 </html>

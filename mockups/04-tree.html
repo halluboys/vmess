@@ -4,94 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>halluboys/dot/.github</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
-  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .75rem;font-size:.8rem;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);text-decoration:none;}
-  .pill{display:inline-flex;align-items:center;padding:.05rem .55rem;font-size:.7rem;border-radius:999px;border:1px solid var(--gh-border);color:var(--gh-fg-muted);}
-  .link{color:var(--gh-accent);text-decoration:none;}
-  .link:hover{text-decoration:underline;}
-  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
-  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;z-index:50;}
-</style>
+<link rel="stylesheet" href="_styles.css">
 </head>
 <body>
-<span class="label">4/7 &middot; File Browser</span>
 
-<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+<header class="AppHeader">
+  <a href="02-dashboard.html" aria-label="Home" style="color: var(--gh-fg); display: flex;">
     <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    <input placeholder="Search repositories..." class="flex-1 max-w-md bg-transparent border rounded-md px-3 py-1 text-sm" style="border-color:var(--gh-border);">
-    <div class="flex-1"></div>
-    <nav class="flex items-center gap-4 text-sm">
-      <a href="02-dashboard.html" style="color:var(--gh-fg-muted);">Repositories</a>
-      <span style="color:var(--gh-fg-muted);">Sign out</span>
-      <div class="w-8 h-8 rounded-full" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"></div>
-    </nav>
+  </a>
+  <span class="muted text-base">halluboys / <a href="03-repo-home.html" class="font-semibold">dot</a></span>
+  <div class="AppHeader-search" style="margin-left: 16px;">
+    <svg class="search-icon" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 1 1-8.998 0A4.499 4.499 0 0 1 11.5 7zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04z"></path></svg>
+    <input placeholder="Type / to search">
+    <span class="kbd">/</span>
   </div>
+  <div class="flex-1"></div>
+  <nav class="AppHeader-nav">
+    <a href="#">Pull requests</a>
+    <a href="#">Issues</a>
+  </nav>
+  <a href="#" class="avatar avatar-32 avatar-fake-1"></a>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 py-6">
-  <div class="mb-5">
-    <div class="flex flex-wrap items-baseline gap-2 mb-3">
-      <svg height="20" viewBox="0 0 16 16" width="20" fill="currentColor" style="color:var(--gh-fg-muted);"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8z"></path></svg>
-      <a href="03-repo-home.html" class="text-xl font-semibold link">halluboys / dot</a>
+<div class="repo-header">
+  <div class="container" style="padding-top: 16px; padding-bottom: 0;">
+    <div class="repo-title">
+      <svg class="muted" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8z"></path></svg>
+      <h1>
+        <a href="02-dashboard.html" class="owner">halluboys</a>
+        <span class="muted">/</span>
+        <a href="03-repo-home.html" class="name">dot</a>
+      </h1>
       <span class="pill">Private</span>
     </div>
-    <nav class="flex flex-wrap gap-1 text-sm" style="border-bottom:1px solid var(--gh-border);">
-      <a href="03-repo-home.html" class="px-3 py-2 -mb-px font-semibold border-b-2" style="border-color:#f78166;">Code</a>
-      <a href="06-commits.html" class="px-3 py-2 -mb-px" style="color:var(--gh-fg-muted);">Commits</a>
+    <nav class="UnderlineNav">
+      <a class="UnderlineNav-item selected" href="03-repo-home.html">Code</a>
+      <a class="UnderlineNav-item" href="06-commits.html">Commits <span class="counter">142</span></a>
     </nav>
   </div>
+</div>
 
-  <div class="card overflow-hidden">
-    <div class="px-4 py-3 flex flex-wrap items-center gap-2" style="border-bottom:1px solid var(--gh-border);">
-      <span class="pill">main</span>
-      <div class="text-sm flex flex-wrap items-center gap-1">
-        <a href="03-repo-home.html" class="link font-semibold">dot</a>
-        <span style="color:var(--gh-fg-muted);">/</span>
-        <span class="font-semibold">.github</span>
-      </div>
-      <a href="06-commits.html" class="ml-auto btn">History</a>
+<main class="container">
+  <!-- Branch + breadcrumb -->
+  <div class="flex items-center gap-2 flex-wrap mb-3">
+    <button class="branch-btn">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25z"></path></svg>
+      <span class="font-semibold">main</span>
+      <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427z"></path></svg>
+    </button>
+    <span class="muted">/</span>
+    <a href="03-repo-home.html" class="font-semibold">dot</a>
+    <span class="muted">/</span>
+    <span class="font-semibold">.github</span>
+    <div class="flex-1"></div>
+    <a href="06-commits.html" class="btn">History</a>
+  </div>
+
+  <!-- File table -->
+  <div class="box file-list">
+    <div class="latest-commit">
+      <span class="avatar avatar-20 avatar-fake-1"></span>
+      <a href="07-commit-detail.html" class="font-semibold text-base">halluboys</a>
+      <a href="#" class="muted text-sm truncate" style="flex: 1;">Add issue templates and CODEOWNERS</a>
+      <a href="#" class="mono text-sm muted">7b8e914</a>
+      <span class="text-sm muted">2 weeks ago</span>
     </div>
 
-    <ul class="text-sm">
-      <li class="px-4 py-2 flex items-center gap-3" style="border-top:1px solid var(--gh-border);">
-        <span class="w-4 shrink-0"></span>
-        <a href="03-repo-home.html" class="link">..</a>
-      </li>
-      <li class="px-4 py-2 flex items-center gap-3" style="border-top:1px solid var(--gh-border);">
-        <svg height="16" viewBox="0 0 16 16" width="16" fill="#54aeff" class="shrink-0"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3h-6.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1h-3.25z"></path></svg>
-        <a href="#" class="link truncate flex-1">workflows</a>
-      </li>
-      <li class="px-4 py-2 flex items-center gap-3" style="border-top:1px solid var(--gh-border);">
-        <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor" class="shrink-0" style="color:var(--gh-fg-muted);"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
-        <a href="05-blob.html" class="link truncate flex-1">FUNDING.yml</a>
-        <span class="text-xs" style="color:var(--gh-fg-muted);">312 B</span>
-        <a href="#" class="text-xs" style="color:var(--gh-fg-muted);" title="Download">
-          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5z"></path></svg>
-        </a>
-      </li>
-      <li class="px-4 py-2 flex items-center gap-3" style="border-top:1px solid var(--gh-border);">
-        <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor" class="shrink-0" style="color:var(--gh-fg-muted);"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
-        <a href="#" class="link truncate flex-1">issue_template.md</a>
-        <span class="text-xs" style="color:var(--gh-fg-muted);">847 B</span>
-        <a href="#" class="text-xs" style="color:var(--gh-fg-muted);" title="Download">
-          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5z"></path></svg>
-        </a>
-      </li>
-      <li class="px-4 py-2 flex items-center gap-3" style="border-top:1px solid var(--gh-border);">
-        <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor" class="shrink-0" style="color:var(--gh-fg-muted);"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
-        <a href="#" class="link truncate flex-1">CODEOWNERS</a>
-        <span class="text-xs" style="color:var(--gh-fg-muted);">128 B</span>
-        <a href="#" class="text-xs" style="color:var(--gh-fg-muted);" title="Download">
-          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5z"></path></svg>
-        </a>
-      </li>
-    </ul>
+    <div class="file-row">
+      <span></span>
+      <a href="03-repo-home.html"><svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor" class="file-icon-folder" style="margin-right:6px;vertical-align:-3px;"><path d="M.513 1.513A1.75 1.75 0 0 1 1.75 1h3.5c.55 0 1.07.26 1.4.7l.9 1.2a.25.25 0 0 0 .2.1H13a1 1 0 0 1 1 1v.5H2v-.5c0-.45.16-.86.43-1.18.06-.07.13-.13.2-.18zM2 6.5h12v6.75A1.75 1.75 0 0 1 12.25 15H3.75A1.75 1.75 0 0 1 2 13.25V6.5z"></path></svg>..</a>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="file-row">
+      <svg class="file-icon-folder" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3h-6.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1h-3.25z"></path></svg>
+      <a href="#">workflows</a>
+      <a href="#" class="commit-msg">Add CI workflow for tests</a>
+      <span class="age">3 weeks ago</span>
+    </div>
+    <div class="file-row">
+      <svg class="file-icon-file" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <a href="05-blob.html">CODEOWNERS</a>
+      <a href="#" class="commit-msg">Add CODEOWNERS</a>
+      <span class="age">2 weeks ago</span>
+    </div>
+    <div class="file-row">
+      <svg class="file-icon-file" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <a href="05-blob.html">FUNDING.yml</a>
+      <a href="#" class="commit-msg">Add GitHub Sponsors funding link</a>
+      <span class="age">1 month ago</span>
+    </div>
+    <div class="file-row">
+      <svg class="file-icon-file" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <a href="05-blob.html">issue_template.md</a>
+      <a href="#" class="commit-msg">Add issue template</a>
+      <span class="age">2 weeks ago</span>
+    </div>
+    <div class="file-row">
+      <svg class="file-icon-file" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <a href="05-blob.html">pull_request_template.md</a>
+      <a href="#" class="commit-msg">Add PR template</a>
+      <span class="age">2 weeks ago</span>
+    </div>
   </div>
 </main>
+
 </body>
 </html>

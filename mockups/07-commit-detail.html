@@ -3,129 +3,187 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Add support for fine-grained PAT tokens &middot; halluboys/dot</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Add support for fine-grained PAT tokens &middot; halluboys/dot@a3f2c10</title>
+<link rel="stylesheet" href="_styles.css">
 <style>
-  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
-  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
-  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;font-size:.8rem;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);text-decoration:none;}
-  .pill{display:inline-flex;align-items:center;padding:.05rem .55rem;font-size:.7rem;border-radius:999px;border:1px solid var(--gh-border);color:var(--gh-fg-muted);}
-  .link{color:var(--gh-accent);text-decoration:none;}
-  .link:hover{text-decoration:underline;}
-  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
-  .diff-add{background:rgba(46,160,67,.15);}
-  .diff-del{background:rgba(248,81,73,.15);}
-  .diff-hunk{background:rgba(56,139,253,.15);color:var(--gh-accent);}
-  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;z-index:50;}
-  .avatar{display:inline-block;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);}
+  .commit-meta-card {
+    background: var(--gh-canvas);
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .commit-stats-bar {
+    background: var(--gh-canvas);
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 24px;
+  }
+  .additions-bar { display: inline-flex; gap: 1px; }
+  .additions-bar span {
+    display: inline-block; width: 8px; height: 8px;
+  }
+  .file-diff-card {
+    background: var(--gh-canvas);
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .file-diff-header {
+    background: var(--gh-canvas-overlay);
+    border-bottom: 1px solid var(--gh-border);
+    padding: 8px 16px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 12px;
+  }
 </style>
 </head>
 <body>
-<span class="label">7/7 &middot; Commit Detail (Diff)</span>
 
-<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+<header class="AppHeader">
+  <a href="02-dashboard.html" aria-label="Home" style="color: var(--gh-fg); display: flex;">
     <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    <input placeholder="Search repositories..." class="flex-1 max-w-md bg-transparent border rounded-md px-3 py-1 text-sm" style="border-color:var(--gh-border);">
-    <div class="flex-1"></div>
-    <nav class="flex items-center gap-4 text-sm">
-      <a href="02-dashboard.html" style="color:var(--gh-fg-muted);">Repositories</a>
-      <span style="color:var(--gh-fg-muted);">Sign out</span>
-      <div class="w-8 h-8 rounded-full" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"></div>
-    </nav>
+  </a>
+  <span class="muted text-base">halluboys / <a href="03-repo-home.html" class="font-semibold">dot</a></span>
+  <div class="AppHeader-search" style="margin-left: 16px;">
+    <svg class="search-icon" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 1 1-8.998 0A4.499 4.499 0 0 1 11.5 7zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04z"></path></svg>
+    <input placeholder="Type / to search">
+    <span class="kbd">/</span>
   </div>
+  <div class="flex-1"></div>
+  <a href="#" class="avatar avatar-32 avatar-fake-1"></a>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 py-6">
-  <div class="mb-5">
-    <div class="flex flex-wrap items-baseline gap-2 mb-3">
-      <a href="03-repo-home.html" class="text-xl font-semibold link">halluboys / dot</a>
+<div class="repo-header">
+  <div class="container" style="padding-top: 16px; padding-bottom: 0;">
+    <div class="repo-title">
+      <svg class="muted" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8z"></path></svg>
+      <h1>
+        <a href="02-dashboard.html" class="owner">halluboys</a>
+        <span class="muted">/</span>
+        <a href="03-repo-home.html" class="name">dot</a>
+      </h1>
       <span class="pill">Private</span>
     </div>
-    <nav class="flex flex-wrap gap-1 text-sm" style="border-bottom:1px solid var(--gh-border);">
-      <a href="03-repo-home.html" class="px-3 py-2 -mb-px" style="color:var(--gh-fg-muted);">Code</a>
-      <a href="06-commits.html" class="px-3 py-2 -mb-px font-semibold border-b-2" style="border-color:#f78166;">Commits</a>
+    <nav class="UnderlineNav">
+      <a class="UnderlineNav-item" href="03-repo-home.html">Code</a>
+      <a class="UnderlineNav-item selected" href="06-commits.html">Commits <span class="counter">142</span></a>
     </nav>
   </div>
+</div>
 
-  <div class="card p-5 mb-4">
-    <h2 class="text-lg font-semibold mb-2">Add support for fine-grained PAT tokens in auth flow</h2>
-    <pre class="text-sm whitespace-pre-wrap mb-3 mono" style="color:var(--gh-fg-muted);">Validate token against /user endpoint and detect token type
+<main class="container">
+  <!-- Commit message header -->
+  <div class="commit-meta-card">
+    <h1 style="margin:0 0 8px; font-size: 20px; font-weight: 600;">Add support for fine-grained PAT tokens in auth flow</h1>
+    <pre class="mono" style="font-size: 13px; color: var(--gh-fg-muted); white-space: pre-wrap; margin: 8px 0 16px;">Validate token against /user endpoint and detect token type
 based on prefix (ghp_ vs github_pat_). Add helpful error
 message when scope insufficient.
 
 Refs #42</pre>
-    <div class="flex flex-wrap items-center gap-2 text-xs" style="color:var(--gh-fg-muted);">
-      <span class="avatar"></span>
-      <span style="color:var(--gh-fg);" class="font-semibold">halluboys</span>
-      <span>committed 2026-05-21 09:42:11 UTC</span>
-      <span>&middot;</span>
-      <span class="mono px-1.5 py-0.5 rounded" style="background:rgba(110,118,129,.15);">a3f2c10</span>
-      <span class="mono">a3f2c10c8e9b4d6a7e2f9c1d3e4b5a6f7c8d9e0a</span>
-    </div>
-    <div class="mt-3 text-sm flex flex-wrap items-center gap-3">
-      <span style="color:var(--gh-fg-muted);">2 files changed</span>
-      <span style="color:#3fb950;">+38</span>
-      <span style="color:#f85149;">-7</span>
+    <hr>
+    <div class="flex items-center gap-2 mt-3 text-sm">
+      <span class="avatar avatar-20 avatar-fake-1"></span>
+      <strong>halluboys</strong>
+      <span class="muted">committed on May 21, 2026</span>
+      <span class="verified" style="display:inline-block; padding:0 7px; font-size:11px; color:var(--gh-success-fg); border:1px solid rgba(46,160,67,.4); border-radius:2em; line-height:18px;">Verified</span>
+
+      <div class="flex-1"></div>
+
+      <div class="flex items-center gap-2 muted text-sm">
+        <span>1 parent</span>
+        <a href="#" class="mono btn">7b8e914</a>
+        <span>commit</span>
+        <a href="#" class="mono btn">a3f2c10</a>
+        <a href="03-repo-home.html" class="btn">
+          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25z"></path></svg>
+          Browse files
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="card overflow-hidden mb-3">
-    <div class="px-4 py-2 text-sm flex flex-wrap items-center gap-2" style="border-bottom:1px solid var(--gh-border); background:var(--gh-bg2);">
-      <span class="mono">auth_helper.py</span>
-      <span class="pill">modified</span>
-      <div class="ml-auto flex items-center gap-3 text-xs">
-        <span style="color:#3fb950;">+32</span>
-        <span style="color:#f85149;">-7</span>
-      </div>
-    </div>
-    <div class="mono text-xs leading-5" style="background:var(--gh-bg2);">
-      <div class="diff-hunk px-3 py-0.5">@@ -10,12 +10,28 @@ def validate_token(token: str) -&gt; bool:</div>
-      <div class="px-3 py-0.5"><span class="mr-2" style="color:var(--gh-fg-muted);">&nbsp;</span>    """Quick check: hit /user endpoint."""</div>
-      <div class="px-3 py-0.5"><span class="mr-2" style="color:var(--gh-fg-muted);">&nbsp;</span>    headers = {"Authorization": f"token {token}"}</div>
-      <div class="diff-del px-3 py-0.5"><span class="mr-2" style="color:#f85149;">-</span>    r = requests.get("https://api.github.com/user", headers=headers)</div>
-      <div class="diff-del px-3 py-0.5"><span class="mr-2" style="color:#f85149;">-</span>    return r.status_code == 200</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>    r = requests.get(</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        "https://api.github.com/user",</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        headers=headers,</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        timeout=10,</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>    )</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>    if r.status_code == 401:</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        return False</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>    if r.status_code == 403:</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        # Token valid tapi scope kurang</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        raise InsufficientScopeError(</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>            "Token tidak punya scope 'repo'. "</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>            "Lihat https://github.com/settings/tokens"</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>        )</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>    return r.ok</div>
-      <div class="px-3 py-0.5"><span class="mr-2" style="color:var(--gh-fg-muted);">&nbsp;</span></div>
+  <!-- Stats summary -->
+  <div class="commit-stats-bar">
+    <span><strong>2</strong> files changed</span>
+    <span><strong>+38</strong> additions <strong>−7</strong> deletions</span>
+    <div class="additions-bar">
+      <span style="background:var(--gh-success-fg)"></span>
+      <span style="background:var(--gh-success-fg)"></span>
+      <span style="background:var(--gh-success-fg)"></span>
+      <span style="background:var(--gh-success-fg)"></span>
+      <span style="background:var(--gh-danger)"></span>
+      <span style="background:var(--gh-border)"></span>
+      <span style="background:var(--gh-border)"></span>
+      <span style="background:var(--gh-border)"></span>
     </div>
   </div>
 
-  <div class="card overflow-hidden mb-3">
-    <div class="px-4 py-2 text-sm flex flex-wrap items-center gap-2" style="border-bottom:1px solid var(--gh-border); background:var(--gh-bg2);">
-      <span class="mono">README.md</span>
-      <span class="pill">modified</span>
-      <div class="ml-auto flex items-center gap-3 text-xs">
-        <span style="color:#3fb950;">+6</span>
-        <span style="color:#f85149;">-0</span>
+  <!-- Diff: file 1 -->
+  <div class="file-diff-card">
+    <div class="file-diff-header">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <span class="mono font-semibold" style="color: var(--gh-fg);">auth_helper.py</span>
+      <span class="label">Modified</span>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 12px;">
+        <span style="color: var(--gh-success-fg);"><strong>+32</strong></span>
+        <span style="color: var(--gh-danger);"><strong>−7</strong></span>
+        <a href="#" class="btn">View file</a>
       </div>
     </div>
-    <div class="mono text-xs leading-5" style="background:var(--gh-bg2);">
-      <div class="diff-hunk px-3 py-0.5">@@ -45,3 +45,9 @@ pip install -r requirements.txt</div>
-      <div class="px-3 py-0.5"><span class="mr-2" style="color:var(--gh-fg-muted);">&nbsp;</span> ## License</div>
-      <div class="px-3 py-0.5"><span class="mr-2" style="color:var(--gh-fg-muted);">&nbsp;</span> MIT</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span></div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>## Token Scopes</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span></div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>- `repo` &mdash; required for private repos</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span>- `public_repo` &mdash; for public-only access</div>
-      <div class="diff-add px-3 py-0.5"><span class="mr-2" style="color:#3fb950;">+</span></div>
+    <table class="diff-table">
+      <tbody>
+        <tr class="hunk"><td class="lineno"></td><td class="lineno"></td><td colspan="2">@@ -10,12 +10,28 @@ def validate_token(token: str) -&gt; bool:</td></tr>
+        <tr><td class="lineno">10</td><td class="lineno">10</td><td class="marker"></td><td class="line">    """Quick check: hit /user endpoint."""</td></tr>
+        <tr><td class="lineno">11</td><td class="lineno">11</td><td class="marker"></td><td class="line">    headers = {"Authorization": f"token {token}"}</td></tr>
+        <tr class="del"><td class="lineno">12</td><td class="lineno"></td><td class="marker">−</td><td class="line">    r = requests.get("https://api.github.com/user", headers=headers)</td></tr>
+        <tr class="del"><td class="lineno">13</td><td class="lineno"></td><td class="marker">−</td><td class="line">    return r.status_code == 200</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">12</td><td class="marker">+</td><td class="line">    r = requests.get(</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">13</td><td class="marker">+</td><td class="line">        "https://api.github.com/user",</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">14</td><td class="marker">+</td><td class="line">        headers=headers,</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">15</td><td class="marker">+</td><td class="line">        timeout=10,</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">16</td><td class="marker">+</td><td class="line">    )</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">17</td><td class="marker">+</td><td class="line">    if r.status_code == 401:</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">18</td><td class="marker">+</td><td class="line">        return False</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">19</td><td class="marker">+</td><td class="line">    if r.status_code == 403:</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">20</td><td class="marker">+</td><td class="line">        # Token valid tapi scope kurang</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">21</td><td class="marker">+</td><td class="line">        raise InsufficientScopeError(</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">22</td><td class="marker">+</td><td class="line">            "Token tidak punya scope 'repo'. "</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">23</td><td class="marker">+</td><td class="line">            "Lihat https://github.com/settings/tokens"</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">24</td><td class="marker">+</td><td class="line">        )</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">25</td><td class="marker">+</td><td class="line">    return r.ok</td></tr>
+        <tr><td class="lineno">14</td><td class="lineno">26</td><td class="marker"></td><td class="line"></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Diff: file 2 -->
+  <div class="file-diff-card">
+    <div class="file-diff-header">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 0 0-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V6H9.75A1.75 1.75 0 0 1 8 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06z"></path></svg>
+      <span class="mono font-semibold" style="color: var(--gh-fg);">README.md</span>
+      <span class="label">Modified</span>
+      <div style="margin-left: auto; display: flex; align-items: center; gap: 12px;">
+        <span style="color: var(--gh-success-fg);"><strong>+6</strong></span>
+        <span style="color: var(--gh-danger);"><strong>−0</strong></span>
+        <a href="#" class="btn">View file</a>
+      </div>
     </div>
+    <table class="diff-table">
+      <tbody>
+        <tr class="hunk"><td class="lineno"></td><td class="lineno"></td><td colspan="2">@@ -45,3 +45,9 @@ pip install -r requirements.txt</td></tr>
+        <tr><td class="lineno">45</td><td class="lineno">45</td><td class="marker"></td><td class="line"> ## License</td></tr>
+        <tr><td class="lineno">46</td><td class="lineno">46</td><td class="marker"></td><td class="line"> MIT</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">47</td><td class="marker">+</td><td class="line"></td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">48</td><td class="marker">+</td><td class="line">## Token Scopes</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">49</td><td class="marker">+</td><td class="line"></td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">50</td><td class="marker">+</td><td class="line">- `repo` &mdash; required for private repos</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">51</td><td class="marker">+</td><td class="line">- `public_repo` &mdash; for public-only access</td></tr>
+        <tr class="add"><td class="lineno"></td><td class="lineno">52</td><td class="marker">+</td><td class="line"></td></tr>
+      </tbody>
+    </table>
   </div>
 </main>
+
 </body>
 </html>

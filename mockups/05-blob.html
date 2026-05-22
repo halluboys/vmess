@@ -3,111 +3,155 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>main.py &middot; halluboys/dot</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>main.py at main &middot; halluboys/dot</title>
+<link rel="stylesheet" href="_styles.css">
 <style>
-  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
-  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
-  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;font-size:.8rem;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);text-decoration:none;}
-  .pill{display:inline-flex;align-items:center;padding:.05rem .55rem;font-size:.7rem;border-radius:999px;border:1px solid var(--gh-border);color:var(--gh-fg-muted);}
-  .link{color:var(--gh-accent);text-decoration:none;}
-  .link:hover{text-decoration:underline;}
-  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
-  .file-lineno{display:inline-block;width:50px;text-align:right;padding-right:16px;color:var(--gh-fg-muted);user-select:none;}
-  .file-line:hover{background:rgba(177,186,196,.06);}
-  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;z-index:50;}
-  .kw{color:#ff7b72;} .str{color:#a5d6ff;} .com{color:#8b949e;} .fn{color:#d2a8ff;} .num{color:#79c0ff;}
+  .blob-toolbar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 8px 16px;
+    background: var(--gh-canvas-overlay);
+    border-bottom: 1px solid var(--gh-border);
+    font-size: 12px; color: var(--gh-fg-muted);
+  }
+  .blob-toolbar .stats { display: flex; gap: 16px; }
+  .blob-toolbar .actions { margin-left: auto; display: flex; gap: 4px; }
 </style>
 </head>
 <body>
-<span class="label">5/7 &middot; File Viewer</span>
 
-<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+<header class="AppHeader">
+  <a href="02-dashboard.html" aria-label="Home" style="color: var(--gh-fg); display: flex;">
     <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    <input placeholder="Search repositories..." class="flex-1 max-w-md bg-transparent border rounded-md px-3 py-1 text-sm" style="border-color:var(--gh-border);">
-    <div class="flex-1"></div>
-    <nav class="flex items-center gap-4 text-sm">
-      <a href="02-dashboard.html" style="color:var(--gh-fg-muted);">Repositories</a>
-      <span style="color:var(--gh-fg-muted);">Sign out</span>
-      <div class="w-8 h-8 rounded-full" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"></div>
-    </nav>
+  </a>
+  <span class="muted text-base">halluboys / <a href="03-repo-home.html" class="font-semibold">dot</a></span>
+  <div class="AppHeader-search" style="margin-left: 16px;">
+    <svg class="search-icon" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 1 1-8.998 0A4.499 4.499 0 0 1 11.5 7zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04z"></path></svg>
+    <input placeholder="Type / to search">
+    <span class="kbd">/</span>
   </div>
+  <div class="flex-1"></div>
+  <a href="#" class="avatar avatar-32 avatar-fake-1"></a>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 py-6">
-  <div class="mb-5">
-    <div class="flex flex-wrap items-baseline gap-2 mb-3">
-      <a href="03-repo-home.html" class="text-xl font-semibold link">halluboys / dot</a>
+<div class="repo-header">
+  <div class="container" style="padding-top: 16px; padding-bottom: 0;">
+    <div class="repo-title">
+      <svg class="muted" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8z"></path></svg>
+      <h1>
+        <a href="02-dashboard.html" class="owner">halluboys</a>
+        <span class="muted">/</span>
+        <a href="03-repo-home.html" class="name">dot</a>
+      </h1>
       <span class="pill">Private</span>
     </div>
-    <nav class="flex flex-wrap gap-1 text-sm" style="border-bottom:1px solid var(--gh-border);">
-      <a href="03-repo-home.html" class="px-3 py-2 -mb-px font-semibold border-b-2" style="border-color:#f78166;">Code</a>
-      <a href="06-commits.html" class="px-3 py-2 -mb-px" style="color:var(--gh-fg-muted);">Commits</a>
+    <nav class="UnderlineNav">
+      <a class="UnderlineNav-item selected" href="03-repo-home.html">Code</a>
+      <a class="UnderlineNav-item" href="06-commits.html">Commits <span class="counter">142</span></a>
     </nav>
   </div>
+</div>
 
-  <div class="flex flex-wrap items-center gap-2 mb-3 text-sm">
-    <span class="pill">main</span>
-    <a href="03-repo-home.html" class="link font-semibold">dot</a>
-    <span style="color:var(--gh-fg-muted);">/</span>
+<main class="container">
+  <div class="flex items-center gap-2 flex-wrap mb-3">
+    <button class="branch-btn">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zm-2.25.75a2.25 2.25 0 1 1 3 2.122V6A2.5 2.5 0 0 1 10 8.5H6a1 1 0 0 0-1 1v1.128a2.251 2.251 0 1 1-1.5 0V5.372a2.25 2.25 0 1 1 1.5 0v1.836A2.492 2.492 0 0 1 6 7h4a1 1 0 0 0 1-1v-.628A2.25 2.25 0 0 1 9.5 3.25z"></path></svg>
+      <span class="font-semibold">main</span>
+      <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427z"></path></svg>
+    </button>
+    <span class="muted">/</span>
+    <a href="03-repo-home.html" class="font-semibold">dot</a>
+    <span class="muted">/</span>
     <span class="font-semibold">main.py</span>
+    <div class="flex-1"></div>
+    <a href="#" class="btn">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zm1.43.75a4.002 4.002 0 0 1-7.86 0H.75a.75.75 0 1 1 0-1.5h3.32a4.001 4.001 0 0 1 7.86 0h3.32a.75.75 0 1 1 0 1.5h-3.32z"></path></svg>
+      History
+    </a>
   </div>
 
-  <div class="card overflow-hidden">
-    <div class="px-4 py-2 flex flex-wrap items-center gap-3 text-xs" style="border-bottom:1px solid var(--gh-border); color:var(--gh-fg-muted);">
-      <span>347 lines</span>
-      <span>&middot;</span>
-      <span>14.7 KB</span>
-      <div class="ml-auto flex items-center gap-1">
-        <a href="06-commits.html" class="btn">History</a>
-        <a href="#" class="btn">Raw</a>
-        <a href="#" class="btn" title="Download">
+  <div class="box">
+    <!-- Latest commit -->
+    <div class="latest-commit">
+      <span class="avatar avatar-20 avatar-fake-1"></span>
+      <a href="07-commit-detail.html" class="font-semibold text-base">halluboys</a>
+      <a href="07-commit-detail.html" class="muted text-sm truncate" style="flex: 1;">Add support for fine-grained PAT tokens in auth flow</a>
+      <a href="07-commit-detail.html" class="mono text-sm muted">a3f2c10</a>
+      <span class="text-sm muted">9 hours ago</span>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="blob-toolbar">
+      <div class="stats">
+        <span><strong style="color:var(--gh-fg)">347</strong> lines</span>
+        <span><strong style="color:var(--gh-fg)">14.7 KB</strong></span>
+      </div>
+      <div class="actions">
+        <a href="#" class="btn">
+          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M3.5 5.75a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-1.5 0v-6.5a.75.75 0 0 1 .75-.75zm9.75 6.5a.75.75 0 0 1-1.5 0v-6.5a.75.75 0 0 1 1.5 0v6.5z"></path></svg>
+          Raw
+        </a>
+        <button class="btn" title="Copy raw content">
+          <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25z"></path></svg>
+        </button>
+        <a href="#" class="btn" title="Download raw">
           <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 0 0 1.06 0l3.75-3.75a.75.75 0 0 0-1.06-1.06L8.75 8.44V1.75a.75.75 0 0 0-1.5 0v6.69L4.78 5.97a.75.75 0 0 0-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5z"></path></svg>
         </a>
       </div>
     </div>
 
-    <div class="text-sm" style="background:var(--gh-bg2);">
-      <table class="w-full mono text-xs leading-5">
-        <tbody>
-          <tr class="file-line"><td class="file-lineno">1</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="com">"""dot - XL/Axis CLI package tool main entry."""</span></td></tr>
-          <tr class="file-line"><td class="file-lineno">2</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> __future__ <span class="kw">import</span> annotations</td></tr>
-          <tr class="file-line"><td class="file-lineno">3</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">4</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">import</span> sys</td></tr>
-          <tr class="file-line"><td class="file-lineno">5</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> banner <span class="kw">import</span> show_banner</td></tr>
-          <tr class="file-line"><td class="file-lineno">6</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> auth_helper <span class="kw">import</span> login_flow</td></tr>
-          <tr class="file-line"><td class="file-lineno">7</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">from</span> ui <span class="kw">import</span> menu, prompt</td></tr>
-          <tr class="file-line"><td class="file-lineno">8</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">9</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">10</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">def</span> <span class="fn">main</span>() -&gt; <span class="kw">int</span>:</td></tr>
-          <tr class="file-line"><td class="file-lineno">11</td><td class="pr-4 whitespace-pre-wrap break-all">    show_banner()</td></tr>
-          <tr class="file-line"><td class="file-lineno">12</td><td class="pr-4 whitespace-pre-wrap break-all">    session = login_flow()</td></tr>
-          <tr class="file-line"><td class="file-lineno">13</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">if</span> <span class="kw">not</span> session:</td></tr>
-          <tr class="file-line"><td class="file-lineno">14</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">print</span>(<span class="str">"Login dibatalkan."</span>)</td></tr>
-          <tr class="file-line"><td class="file-lineno">15</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">return</span> <span class="num">1</span></td></tr>
-          <tr class="file-line"><td class="file-lineno">16</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">17</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">while</span> <span class="kw">True</span>:</td></tr>
-          <tr class="file-line"><td class="file-lineno">18</td><td class="pr-4 whitespace-pre-wrap break-all">        choice = menu([</td></tr>
-          <tr class="file-line"><td class="file-lineno">19</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Lihat paket aktif"</span>,</td></tr>
-          <tr class="file-line"><td class="file-lineno">20</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Beli paket baru"</span>,</td></tr>
-          <tr class="file-line"><td class="file-lineno">21</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Cek kuota"</span>,</td></tr>
-          <tr class="file-line"><td class="file-lineno">22</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="str">"Logout"</span>,</td></tr>
-          <tr class="file-line"><td class="file-lineno">23</td><td class="pr-4 whitespace-pre-wrap break-all">        ])</td></tr>
-          <tr class="file-line"><td class="file-lineno">24</td><td class="pr-4 whitespace-pre-wrap break-all">        <span class="kw">if</span> choice == <span class="num">3</span>:</td></tr>
-          <tr class="file-line"><td class="file-lineno">25</td><td class="pr-4 whitespace-pre-wrap break-all">            <span class="kw">break</span></td></tr>
-          <tr class="file-line"><td class="file-lineno">26</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">27</td><td class="pr-4 whitespace-pre-wrap break-all">    <span class="kw">return</span> <span class="num">0</span></td></tr>
-          <tr class="file-line"><td class="file-lineno">28</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">29</td><td class="pr-4 whitespace-pre-wrap break-all"></td></tr>
-          <tr class="file-line"><td class="file-lineno">30</td><td class="pr-4 whitespace-pre-wrap break-all"><span class="kw">if</span> __name__ == <span class="str">"__main__"</span>:</td></tr>
-          <tr class="file-line"><td class="file-lineno">31</td><td class="pr-4 whitespace-pre-wrap break-all">    sys.exit(main())</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <!-- Code -->
+    <table class="blob-code">
+      <tbody>
+        <tr><td class="lineno">1</td><td class="line"><span class="tok-com">"""dot - XL/Axis CLI package tool main entry."""</span></td></tr>
+        <tr><td class="lineno">2</td><td class="line"><span class="tok-kw">from</span> __future__ <span class="tok-kw">import</span> annotations</td></tr>
+        <tr><td class="lineno">3</td><td class="line"></td></tr>
+        <tr><td class="lineno">4</td><td class="line"><span class="tok-kw">import</span> sys</td></tr>
+        <tr><td class="lineno">5</td><td class="line"><span class="tok-kw">import</span> logging</td></tr>
+        <tr><td class="lineno">6</td><td class="line"><span class="tok-kw">from</span> banner <span class="tok-kw">import</span> show_banner</td></tr>
+        <tr><td class="lineno">7</td><td class="line"><span class="tok-kw">from</span> auth_helper <span class="tok-kw">import</span> login_flow, InsufficientScopeError</td></tr>
+        <tr><td class="lineno">8</td><td class="line"><span class="tok-kw">from</span> ui <span class="tok-kw">import</span> menu, prompt, error</td></tr>
+        <tr><td class="lineno">9</td><td class="line"><span class="tok-kw">from</span> purchase_api <span class="tok-kw">import</span> PurchaseClient</td></tr>
+        <tr><td class="lineno">10</td><td class="line"></td></tr>
+        <tr><td class="lineno">11</td><td class="line">log = logging.<span class="tok-fn">getLogger</span>(__name__)</td></tr>
+        <tr><td class="lineno">12</td><td class="line"></td></tr>
+        <tr><td class="lineno">13</td><td class="line"></td></tr>
+        <tr><td class="lineno">14</td><td class="line"><span class="tok-kw">def</span> <span class="tok-fn">main</span>() -&gt; <span class="tok-bui">int</span>:</td></tr>
+        <tr><td class="lineno">15</td><td class="line">    <span class="tok-com"># Tampilkan banner ASCII dan info versi</span></td></tr>
+        <tr><td class="lineno">16</td><td class="line">    <span class="tok-fn">show_banner</span>()</td></tr>
+        <tr><td class="lineno">17</td><td class="line"></td></tr>
+        <tr><td class="lineno">18</td><td class="line">    <span class="tok-kw">try</span>:</td></tr>
+        <tr><td class="lineno">19</td><td class="line">        session = <span class="tok-fn">login_flow</span>()</td></tr>
+        <tr><td class="lineno">20</td><td class="line">    <span class="tok-kw">except</span> <span class="tok-cls">InsufficientScopeError</span> <span class="tok-kw">as</span> e:</td></tr>
+        <tr><td class="lineno">21</td><td class="line">        <span class="tok-fn">error</span>(<span class="tok-str">f"Token tidak punya scope cukup: {e}"</span>)</td></tr>
+        <tr><td class="lineno">22</td><td class="line">        <span class="tok-kw">return</span> <span class="tok-num">2</span></td></tr>
+        <tr><td class="lineno">23</td><td class="line"></td></tr>
+        <tr><td class="lineno">24</td><td class="line">    <span class="tok-kw">if</span> <span class="tok-kw">not</span> session:</td></tr>
+        <tr><td class="lineno">25</td><td class="line">        <span class="tok-bui">print</span>(<span class="tok-str">"Login dibatalkan."</span>)</td></tr>
+        <tr><td class="lineno">26</td><td class="line">        <span class="tok-kw">return</span> <span class="tok-num">1</span></td></tr>
+        <tr><td class="lineno">27</td><td class="line"></td></tr>
+        <tr><td class="lineno">28</td><td class="line">    client = <span class="tok-cls">PurchaseClient</span>(session)</td></tr>
+        <tr><td class="lineno">29</td><td class="line"></td></tr>
+        <tr><td class="lineno">30</td><td class="line">    <span class="tok-kw">while</span> <span class="tok-bui">True</span>:</td></tr>
+        <tr><td class="lineno">31</td><td class="line">        choice = <span class="tok-fn">menu</span>([</td></tr>
+        <tr><td class="lineno">32</td><td class="line">            <span class="tok-str">"Lihat paket aktif"</span>,</td></tr>
+        <tr><td class="lineno">33</td><td class="line">            <span class="tok-str">"Beli paket baru"</span>,</td></tr>
+        <tr><td class="lineno">34</td><td class="line">            <span class="tok-str">"Cek kuota"</span>,</td></tr>
+        <tr><td class="lineno">35</td><td class="line">            <span class="tok-str">"Logout"</span>,</td></tr>
+        <tr><td class="lineno">36</td><td class="line">        ])</td></tr>
+        <tr><td class="lineno">37</td><td class="line">        <span class="tok-kw">if</span> choice == <span class="tok-num">3</span>:</td></tr>
+        <tr><td class="lineno">38</td><td class="line">            <span class="tok-kw">break</span></td></tr>
+        <tr><td class="lineno">39</td><td class="line">        <span class="tok-kw">elif</span> choice == <span class="tok-num">0</span>:</td></tr>
+        <tr><td class="lineno">40</td><td class="line">            client.<span class="tok-fn">show_active_packages</span>()</td></tr>
+        <tr><td class="lineno">41</td><td class="line"></td></tr>
+        <tr><td class="lineno">42</td><td class="line">    <span class="tok-kw">return</span> <span class="tok-num">0</span></td></tr>
+        <tr><td class="lineno">43</td><td class="line"></td></tr>
+        <tr><td class="lineno">44</td><td class="line"></td></tr>
+        <tr><td class="lineno">45</td><td class="line"><span class="tok-kw">if</span> __name__ == <span class="tok-str">"__main__"</span>:</td></tr>
+        <tr><td class="lineno">46</td><td class="line">    sys.<span class="tok-fn">exit</span>(<span class="tok-fn">main</span>())</td></tr>
+      </tbody>
+    </table>
   </div>
 </main>
+
 </body>
 </html>

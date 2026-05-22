@@ -4,126 +4,184 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commits &middot; halluboys/dot</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="_styles.css">
 <style>
-  :root{--gh-bg:#0d1117;--gh-bg2:#010409;--gh-card:#161b22;--gh-border:#30363d;--gh-fg:#c9d1d9;--gh-fg-muted:#8b949e;--gh-accent:#58a6ff;}
-  html,body{background:var(--gh-bg);color:var(--gh-fg);margin:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;}
-  code,.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
-  .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .75rem;font-size:.8rem;border-radius:6px;border:1px solid var(--gh-border);background:#21262d;color:var(--gh-fg);text-decoration:none;}
-  .pill{display:inline-flex;align-items:center;padding:.05rem .55rem;font-size:.7rem;border-radius:999px;border:1px solid var(--gh-border);color:var(--gh-fg-muted);}
-  .link{color:var(--gh-accent);text-decoration:none;}
-  .link:hover{text-decoration:underline;}
-  .card{background:var(--gh-card);border:1px solid var(--gh-border);border-radius:6px;}
-  .label{position:fixed;top:12px;right:12px;background:#238636;color:#fff;padding:4px 12px;border-radius:999px;font-size:11px;font-weight:600;z-index:50;}
-  .avatar{display:inline-block;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);}
-  .av2{background:linear-gradient(135deg,#22c55e,#3b82f6);}
-  .av3{background:linear-gradient(135deg,#f59e0b,#ef4444);}
+  .commits-timeline { position: relative; padding-left: 32px; }
+  .commits-timeline::before {
+    content: ''; position: absolute; left: 11px; top: 0; bottom: 0;
+    width: 2px; background: var(--gh-border);
+  }
+  .commit-day-header {
+    position: relative; margin: 24px 0 16px;
+    display: flex; align-items: center; gap: 8px;
+    color: var(--gh-fg-muted); font-size: 14px;
+  }
+  .commit-day-header::before {
+    content: ''; position: absolute; left: -28px; top: 50%; transform: translateY(-50%);
+    width: 18px; height: 18px; background: var(--gh-canvas-overlay);
+    border: 2px solid var(--gh-border); border-radius: 50%;
+    box-sizing: border-box;
+  }
+  .commit-card {
+    background: var(--gh-canvas);
+    border: 1px solid var(--gh-border); border-radius: 6px;
+    padding: 12px 16px;
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 8px;
+  }
+  .commit-card .msg { flex: 1; min-width: 0; }
+  .commit-card .msg-title { font-weight: 600; font-size: 14px; color: var(--gh-fg); display: block; margin-bottom: 4px; }
+  .commit-card .msg-title:hover { color: var(--gh-accent); }
+  .commit-card .msg-sub { font-size: 12px; color: var(--gh-fg-muted); }
+  .commit-card .verified {
+    display: inline-block; padding: 0 7px; font-size: 11px;
+    color: var(--gh-success-fg); border: 1px solid rgba(46,160,67,.4);
+    border-radius: 2em; line-height: 18px;
+  }
 </style>
 </head>
 <body>
-<span class="label">6/7 &middot; Commit History</span>
 
-<header style="background:var(--gh-bg2);border-bottom:1px solid var(--gh-border);">
-  <div class="max-w-6xl mx-auto px-4 h-14 flex items-center gap-4">
+<header class="AppHeader">
+  <a href="02-dashboard.html" aria-label="Home" style="color: var(--gh-fg); display: flex;">
     <svg height="32" viewBox="0 0 16 16" width="32" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-    <input placeholder="Search repositories..." class="flex-1 max-w-md bg-transparent border rounded-md px-3 py-1 text-sm" style="border-color:var(--gh-border);">
-    <div class="flex-1"></div>
-    <nav class="flex items-center gap-4 text-sm">
-      <a href="02-dashboard.html" style="color:var(--gh-fg-muted);">Repositories</a>
-      <span style="color:var(--gh-fg-muted);">Sign out</span>
-      <div class="w-8 h-8 rounded-full" style="background:linear-gradient(135deg,#7c3aed,#ec4899);"></div>
-    </nav>
+  </a>
+  <span class="muted text-base">halluboys / <a href="03-repo-home.html" class="font-semibold">dot</a></span>
+  <div class="AppHeader-search" style="margin-left: 16px;">
+    <svg class="search-icon" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 1 1-8.998 0A4.499 4.499 0 0 1 11.5 7zm-.82 4.74a6 6 0 1 1 1.06-1.06l3.04 3.04a.75.75 0 1 1-1.06 1.06l-3.04-3.04z"></path></svg>
+    <input placeholder="Type / to search">
+    <span class="kbd">/</span>
   </div>
+  <div class="flex-1"></div>
+  <a href="#" class="avatar avatar-32 avatar-fake-1"></a>
 </header>
 
-<main class="max-w-6xl mx-auto px-4 py-6">
-  <div class="mb-5">
-    <div class="flex flex-wrap items-baseline gap-2 mb-3">
-      <a href="03-repo-home.html" class="text-xl font-semibold link">halluboys / dot</a>
+<div class="repo-header">
+  <div class="container" style="padding-top: 16px; padding-bottom: 0;">
+    <div class="repo-title">
+      <svg class="muted" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 1 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 0 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 0 1 1-1h8z"></path></svg>
+      <h1>
+        <a href="02-dashboard.html" class="owner">halluboys</a>
+        <span class="muted">/</span>
+        <a href="03-repo-home.html" class="name">dot</a>
+      </h1>
       <span class="pill">Private</span>
     </div>
-    <nav class="flex flex-wrap gap-1 text-sm" style="border-bottom:1px solid var(--gh-border);">
-      <a href="03-repo-home.html" class="px-3 py-2 -mb-px" style="color:var(--gh-fg-muted);">Code</a>
-      <a href="#" class="px-3 py-2 -mb-px font-semibold border-b-2" style="border-color:#f78166;">Commits</a>
+    <nav class="UnderlineNav">
+      <a class="UnderlineNav-item" href="03-repo-home.html">Code</a>
+      <a class="UnderlineNav-item selected" href="06-commits.html">Commits <span class="counter">142</span></a>
     </nav>
   </div>
+</div>
 
-  <div class="flex flex-wrap items-center gap-3 mb-4">
-    <span class="pill">main</span>
+<main class="container">
+  <div class="flex items-center gap-2 flex-wrap mb-4">
+    <button class="branch-btn">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"></path></svg>
+      <span class="font-semibold">main</span>
+      <svg height="12" viewBox="0 0 16 16" width="12" fill="currentColor"><path d="M4.427 7.427l3.396 3.396a.25.25 0 0 0 .354 0l3.396-3.396A.25.25 0 0 0 11.396 7H4.604a.25.25 0 0 0-.177.427z"></path></svg>
+    </button>
+    <div class="flex-1"></div>
+    <button class="btn">
+      <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M.75 3a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75zm3 4a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5zm3 4a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-2.5z"></path></svg>
+      All authors
+    </button>
   </div>
 
-  <div class="card overflow-hidden">
-    <div class="px-4 py-2 text-sm flex items-center gap-2" style="background:var(--gh-bg2);color:var(--gh-fg-muted);">
+  <div class="commits-timeline">
+    <div class="commit-day-header">
       <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"></path></svg>
-      Commits on 2026-05-21
-    </div>
-    <div class="px-4 py-3 flex items-start gap-3" style="border-top:1px solid var(--gh-border);">
-      <span class="avatar mt-0.5"></span>
-      <div class="flex-1 min-w-0">
-        <a href="07-commit-detail.html" class="font-semibold text-sm link block truncate">Add support for fine-grained PAT tokens in auth flow</a>
-        <div class="text-xs mt-0.5" style="color:var(--gh-fg-muted);">
-          halluboys committed 2026-05-21 09:42:11 UTC
-        </div>
-      </div>
-      <a href="07-commit-detail.html" class="text-xs mono px-2 py-0.5 rounded" style="background:rgba(110,118,129,.15);color:var(--gh-fg-muted);">a3f2c10</a>
-    </div>
-    <div class="px-4 py-3 flex items-start gap-3" style="border-top:1px solid var(--gh-border);">
-      <span class="avatar av2 mt-0.5"></span>
-      <div class="flex-1 min-w-0">
-        <a href="07-commit-detail.html" class="font-semibold text-sm link block truncate">Fix banner rendering on small terminals</a>
-        <div class="text-xs mt-0.5" style="color:var(--gh-fg-muted);">
-          contributor-x committed 2026-05-21 03:15:00 UTC
-        </div>
-      </div>
-      <a href="#" class="text-xs mono px-2 py-0.5 rounded" style="background:rgba(110,118,129,.15);color:var(--gh-fg-muted);">7b8e914</a>
+      Commits on May 21, 2026
     </div>
 
-    <div class="px-4 py-2 text-sm flex items-center gap-2" style="background:var(--gh-bg2);color:var(--gh-fg-muted);border-top:1px solid var(--gh-border);">
-      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"></path></svg>
-      Commits on 2026-05-19
-    </div>
-    <div class="px-4 py-3 flex items-start gap-3" style="border-top:1px solid var(--gh-border);">
-      <span class="avatar mt-0.5"></span>
-      <div class="flex-1 min-w-0">
-        <a href="#" class="font-semibold text-sm link block truncate">Refactor purchase API client &amp; add retry logic</a>
-        <div class="text-xs mt-0.5" style="color:var(--gh-fg-muted);">
-          halluboys committed 2026-05-19 22:08:47 UTC
+    <div class="commit-card">
+      <span class="avatar avatar-32 avatar-fake-1"></span>
+      <div class="msg">
+        <a href="07-commit-detail.html" class="msg-title">Add support for fine-grained PAT tokens in auth flow</a>
+        <div class="msg-sub">
+          <strong style="color: var(--gh-fg);">halluboys</strong> committed 9 hours ago
+          <span class="verified" style="margin-left: 4px;">Verified</span>
         </div>
       </div>
-      <a href="#" class="text-xs mono px-2 py-0.5 rounded" style="background:rgba(110,118,129,.15);color:var(--gh-fg-muted);">e1d4778</a>
-    </div>
-    <div class="px-4 py-3 flex items-start gap-3" style="border-top:1px solid var(--gh-border);">
-      <span class="avatar av3 mt-0.5"></span>
-      <div class="flex-1 min-w-0">
-        <a href="#" class="font-semibold text-sm link block truncate">Update sentry SDK to 2.x</a>
-        <div class="text-xs mt-0.5" style="color:var(--gh-fg-muted);">
-          dependabot[bot] committed 2026-05-19 11:03:12 UTC
-        </div>
-      </div>
-      <a href="#" class="text-xs mono px-2 py-0.5 rounded" style="background:rgba(110,118,129,.15);color:var(--gh-fg-muted);">3c9a155</a>
+      <a href="07-commit-detail.html" class="btn mono"><span class="text-sm">a3f2c10</span></a>
+      <a href="03-repo-home.html" class="btn btn-icon" title="Browse files at this point">
+        <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25zm6.56 0a.75.75 0 1 0-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06l4.25-4.25a.75.75 0 0 0 0-1.06l-4.25-4.25z"></path></svg>
+      </a>
     </div>
 
-    <div class="px-4 py-2 text-sm flex items-center gap-2" style="background:var(--gh-bg2);color:var(--gh-fg-muted);border-top:1px solid var(--gh-border);">
-      Commits on 2026-05-15
-    </div>
-    <div class="px-4 py-3 flex items-start gap-3" style="border-top:1px solid var(--gh-border);">
-      <span class="avatar av2 mt-0.5"></span>
-      <div class="flex-1 min-w-0">
-        <a href="#" class="font-semibold text-sm link block truncate">Add CHANGELOG.md and bump version to 1.4.0</a>
-        <div class="text-xs mt-0.5" style="color:var(--gh-fg-muted);">
-          contributor-x committed 2026-05-15 14:22:33 UTC
+    <div class="commit-card">
+      <span class="avatar avatar-32 avatar-fake-2"></span>
+      <div class="msg">
+        <a href="#" class="msg-title">Fix banner rendering on small terminals (&lt;80 cols)</a>
+        <div class="msg-sub">
+          <strong style="color: var(--gh-fg);">contributor-x</strong> committed 18 hours ago
         </div>
       </div>
-      <a href="#" class="text-xs mono px-2 py-0.5 rounded" style="background:rgba(110,118,129,.15);color:var(--gh-fg-muted);">b582e23</a>
+      <a href="#" class="btn mono"><span class="text-sm">7b8e914</span></a>
+      <a href="#" class="btn btn-icon" title="Browse files at this point">
+        <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25zm6.56 0a.75.75 0 1 0-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06l4.25-4.25a.75.75 0 0 0 0-1.06l-4.25-4.25z"></path></svg>
+      </a>
+    </div>
+
+    <div class="commit-day-header">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"></path></svg>
+      Commits on May 19, 2026
+    </div>
+
+    <div class="commit-card">
+      <span class="avatar avatar-32 avatar-fake-1"></span>
+      <div class="msg">
+        <a href="#" class="msg-title">Refactor purchase API client &amp; add retry logic</a>
+        <div class="msg-sub">
+          <strong style="color: var(--gh-fg);">halluboys</strong> committed 3 days ago
+          <span class="verified" style="margin-left: 4px;">Verified</span>
+        </div>
+      </div>
+      <a href="#" class="btn mono"><span class="text-sm">e1d4778</span></a>
+      <a href="#" class="btn btn-icon" title="Browse files at this point">
+        <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25zm6.56 0a.75.75 0 1 0-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 1 0 1.06 1.06l4.25-4.25a.75.75 0 0 0 0-1.06l-4.25-4.25z"></path></svg>
+      </a>
+    </div>
+
+    <div class="commit-card">
+      <span class="avatar avatar-32 avatar-fake-3"></span>
+      <div class="msg">
+        <a href="#" class="msg-title">Update sentry SDK to 2.x</a>
+        <div class="msg-sub">
+          <strong style="color: var(--gh-fg);">dependabot[bot]</strong> committed 3 days ago
+        </div>
+      </div>
+      <a href="#" class="btn mono"><span class="text-sm">3c9a155</span></a>
+      <a href="#" class="btn btn-icon">
+        <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25z"></path></svg>
+      </a>
+    </div>
+
+    <div class="commit-day-header">
+      <svg height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"></path></svg>
+      Commits on May 15, 2026
+    </div>
+
+    <div class="commit-card">
+      <span class="avatar avatar-32 avatar-fake-2"></span>
+      <div class="msg">
+        <a href="#" class="msg-title">Add CHANGELOG.md and bump version to 1.4.0</a>
+        <div class="msg-sub">
+          <strong style="color: var(--gh-fg);">contributor-x</strong> committed last week
+        </div>
+      </div>
+      <a href="#" class="btn mono"><span class="text-sm">b582e23</span></a>
+      <a href="#" class="btn btn-icon">
+        <svg height="14" viewBox="0 0 16 16" width="14" fill="currentColor"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 0 1 1.06 1.06L2.06 8l3.72 3.72a.75.75 0 1 1-1.06 1.06L.47 8.53a.75.75 0 0 1 0-1.06l4.25-4.25z"></path></svg>
+      </a>
     </div>
   </div>
 
-  <div class="flex items-center justify-between mt-6 text-sm">
-    <span></span>
-    <span style="color:var(--gh-fg-muted);">Page 1</span>
-    <a class="btn" href="#">Older &rarr;</a>
+  <div class="flex items-center justify-center gap-2 mt-6">
+    <a class="btn">Newer</a>
+    <a class="btn">Older</a>
   </div>
 </main>
+
 </body>
 </html>
